@@ -1,0 +1,1012 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+init CODE 0 E E 4 1 2
+reset_vec CODE 0 0 0 4 1 2
+$dist/default/debug\sim-rpm-rev00.X.debug.o
+cinit CODE 0 1B2C 1B2C 28 1 2
+intcode_body CODE 0 13D6 13D6 13C 1 2
+text0 CODE 0 1BA4 1BA4 E 1 2
+text1 CODE 0 1B54 1B54 26 1 2
+text2 CODE 0 1BB2 1BB2 E 1 2
+text3 CODE 0 1B7A 1B7A 16 1 2
+text4 CODE 0 1BC0 1BC0 A 1 2
+text5 CODE 0 1292 1292 144 1 2
+text6 CODE 0 1820 1820 A2 1 2
+text7 CODE 0 1618 1618 B0 1 2
+text8 CODE 0 18C2 18C2 98 1 2
+text9 CODE 0 1776 1776 AA 1 2
+text10 CODE 0 10DE 10DE 1B4 1 2
+text11 CODE 0 1512 1512 106 1 2
+text12 CODE 0 1AE6 1AE6 46 1 2
+text13 CODE 0 802 802 4B6 1 2
+text14 CODE 0 CB8 CB8 426 1 2
+text15 CODE 0 1A8A 1A8A 5C 1 2
+text16 CODE 0 19CE 19CE 5E 1 2
+text17 CODE 0 16C8 16C8 AE 1 2
+text18 CODE 0 1A2C 1A2C 5E 1 2
+text19 CODE 0 195A 195A 74 1 2
+text20 CODE 0 1B90 1B90 14 1 2
+text22 CODE 0 1BCA 1BCA A 1 2
+idataCOMRAM CODE 0 1BD4 1BD4 1 1 1
+cstackCOMRAM COMRAM 1 1 1 56 1 1
+cstackBANK0 BANK0 1 60 60 19 1 1
+temp COMRAM 1 5B 5B 1 1 1
+bssBANK0 BANK0 1 79 79 2 1 1
+intcode CODE 0 8 8 6 1 2
+smallconst SMALLCONST 0 800 800 2 1 2
+dataCOMRAM COMRAM 1 5A 5A 1 1 1
+bssCOMRAM COMRAM 1 57 57 3 1 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 7B-7FF 1
+SFR F60-FFF 1
+BANK0 7B-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+CONST 4-7 1
+CONST 12-7FF 1
+CONST 1BD5-7FFF 1
+IDLOC 200000-200007 1
+SMALLCONST 1BD5-7FFF 1
+CODE 4-7 1
+CODE 12-7FF 1
+CODE 1BD5-7FFF 1
+BIGRAM 5C-5F 1
+BIGRAM 7B-7FF 1
+BIGSFR F60-FFF 1
+COMRAM 5C-5F 1
+CONFIG 300000-30000D 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST 1BD5-7FFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/debug\sim-rpm-rev00.X.debug.o
+8 intcode CODE >6180:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+8 intcode CODE >22:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1BCA text22 CODE >48:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BCA text22 CODE >50:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BCE text22 CODE >51:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BD2 text22 CODE >52:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+13D6 intcode_body CODE >22:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+13D8 intcode_body CODE >24:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+13E6 intcode_body CODE >26:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+13E8 intcode_body CODE >27:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+13F4 intcode_body CODE >28:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1418 intcode_body CODE >31:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1426 intcode_body CODE >33:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1428 intcode_body CODE >34:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+142A intcode_body CODE >35:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+142C intcode_body CODE >36:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+143E intcode_body CODE >38:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1440 intcode_body CODE >39:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1442 intcode_body CODE >41:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1444 intcode_body CODE >43:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1456 intcode_body CODE >45:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1458 intcode_body CODE >46:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+145A intcode_body CODE >47:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+146C intcode_body CODE >48:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+146E intcode_body CODE >49:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1470 intcode_body CODE >54:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1482 intcode_body CODE >55:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1496 intcode_body CODE >56:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+14AA intcode_body CODE >57:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+14BE intcode_body CODE >58:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+14D2 intcode_body CODE >59:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+14E6 intcode_body CODE >60:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+14FA intcode_body CODE >61:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+150E intcode_body CODE >65:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1B90 text20 CODE >68:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B90 text20 CODE >71:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B94 text20 CODE >72:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B98 text20 CODE >73:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B9C text20 CODE >74:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B9E text20 CODE >75:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BA0 text20 CODE >76:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BA2 text20 CODE >77:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+195A text19 CODE >7:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+195A text19 CODE >13:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+1962 text19 CODE >14:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+1974 text19 CODE >15:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+1978 text19 CODE >16:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+197C text19 CODE >17:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+1982 text19 CODE >18:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+1984 text19 CODE >16:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+1992 text19 CODE >21:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+1998 text19 CODE >22:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+19AE text19 CODE >23:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+19B6 text19 CODE >24:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+19B8 text19 CODE >26:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+19BE text19 CODE >27:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+19C4 text19 CODE >28:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+19C4 text19 CODE >29:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+19CC text19 CODE >30:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
+1A2C text18 CODE >274:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1A2C text18 CODE >276:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1A38 text18 CODE >278:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1A5A text18 CODE >276:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1A88 text18 CODE >280:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+16C8 text17 CODE >52:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+16CA text17 CODE >54:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+16CE text17 CODE >55:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+16DA text17 CODE >57:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+16E2 text17 CODE >58:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+16EE text17 CODE >60:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+16F0 text17 CODE >61:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+16F2 text17 CODE >62:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+16F4 text17 CODE >63:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1700 text17 CODE >65:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1702 text17 CODE >66:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+170E text17 CODE >68:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1712 text17 CODE >69:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+171C text17 CODE >71:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+171E text17 CODE >72:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1720 text17 CODE >73:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1722 text17 CODE >74:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+172E text17 CODE >76:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1730 text17 CODE >77:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+173C text17 CODE >79:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1758 text17 CODE >80:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1774 text17 CODE >81:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+19CE text16 CODE >257:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+19CE text16 CODE >260:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+19DA text16 CODE >262:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+19FC text16 CODE >260:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1A2A text16 CODE >265:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1A8A text15 CODE >95:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1A8A text15 CODE >97:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1A96 text15 CODE >98:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1A98 text15 CODE >99:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1A9C text15 CODE >102:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1AA2 text15 CODE >103:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1AAE text15 CODE >105:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1AB4 text15 CODE >106:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1AC0 text15 CODE >108:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1AC6 text15 CODE >110:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1ACC text15 CODE >112:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1AD2 text15 CODE >114:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1AD8 text15 CODE >116:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1ADE text15 CODE >118:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+1AE4 text15 CODE >119:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+CB8 text14 CODE >8:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+CB8 text14 CODE >17:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+CBE text14 CODE >18:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+CC4 text14 CODE >19:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+CD2 text14 CODE >20:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+CD4 text14 CODE >24:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+CE4 text14 CODE >26:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+CF4 text14 CODE >28:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D04 text14 CODE >31:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D06 text14 CODE >33:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D0A text14 CODE >36:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D1A text14 CODE >39:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D20 text14 CODE >40:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D26 text14 CODE >41:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D34 text14 CODE >42:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D36 text14 CODE >45:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D46 text14 CODE >48:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D56 text14 CODE >50:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D66 text14 CODE >53:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D68 text14 CODE >54:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D6C text14 CODE >57:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D7C text14 CODE >58:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D7C text14 CODE >65:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+D9C text14 CODE >66:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+DB0 text14 CODE >95:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+DBC text14 CODE >96:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+DC6 text14 CODE >97:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+DD0 text14 CODE >98:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+DDC text14 CODE >99:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+DE8 text14 CODE >100:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+DF4 text14 CODE >101:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E00 text14 CODE >102:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E0C text14 CODE >103:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E18 text14 CODE >104:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E26 text14 CODE >105:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E32 text14 CODE >106:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E42 text14 CODE >107:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E4E text14 CODE >108:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E5E text14 CODE >109:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E6C text14 CODE >110:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E78 text14 CODE >111:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E88 text14 CODE >112:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+E94 text14 CODE >113:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+EA4 text14 CODE >114:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+EB0 text14 CODE >115:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+EC0 text14 CODE >116:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+ECC text14 CODE >117:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+EF6 text14 CODE >145:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F2C text14 CODE >146:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F3A text14 CODE >149:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F54 text14 CODE >152:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F58 text14 CODE >153:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F62 text14 CODE >154:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F70 text14 CODE >155:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F72 text14 CODE >156:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F72 text14 CODE >157:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F7C text14 CODE >158:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F82 text14 CODE >152:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F90 text14 CODE >163:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+F92 text14 CODE >164:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+FA0 text14 CODE >165:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+FCE text14 CODE >166:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+FD2 text14 CODE >167:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+FD6 text14 CODE >168:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+FD6 text14 CODE >169:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+FE8 text14 CODE >173:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+FE8 text14 CODE >174:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+FF8 text14 CODE >175:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+1004 text14 CODE >176:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+1012 text14 CODE >177:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+103C text14 CODE >178:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+1040 text14 CODE >183:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+105A text14 CODE >184:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+106A text14 CODE >185:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+106E text14 CODE >187:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+1088 text14 CODE >188:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+1098 text14 CODE >190:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+109A text14 CODE >191:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+109E text14 CODE >192:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+109E text14 CODE >194:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+10A2 text14 CODE >195:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+10B2 text14 CODE >196:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+10C0 text14 CODE >197:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+10C2 text14 CODE >199:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+10C8 text14 CODE >201:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+10CC text14 CODE >203:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+10DC text14 CODE >205:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
+802 text13 CODE >10:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+802 text13 CODE >21:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+808 text13 CODE >22:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+80E text13 CODE >23:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+81C text13 CODE >24:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+81E text13 CODE >28:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+82E text13 CODE >30:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+83E text13 CODE >32:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+84E text13 CODE >35:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+850 text13 CODE >37:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+852 text13 CODE >38:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+856 text13 CODE >41:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+866 text13 CODE >44:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+86C text13 CODE >46:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+87E text13 CODE >47:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+880 text13 CODE >49:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+886 text13 CODE >50:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+894 text13 CODE >51:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+896 text13 CODE >55:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+8A6 text13 CODE >57:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+8B6 text13 CODE >59:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+8C6 text13 CODE >62:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+8C8 text13 CODE >64:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+8CA text13 CODE >65:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+8CE text13 CODE >68:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+8DE text13 CODE >75:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+8F0 text13 CODE >77:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+8FE text13 CODE >78:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+902 text13 CODE >81:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+906 text13 CODE >82:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+90A text13 CODE >83:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+90E text13 CODE >84:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+912 text13 CODE >85:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+916 text13 CODE >86:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+91A text13 CODE >87:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+91E text13 CODE >88:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+922 text13 CODE >89:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+926 text13 CODE >90:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+92A text13 CODE >91:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+92E text13 CODE >92:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+932 text13 CODE >93:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+936 text13 CODE >94:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+93A text13 CODE >95:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+93E text13 CODE >98:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+940 text13 CODE >100:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+96A text13 CODE >101:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+986 text13 CODE >102:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+996 text13 CODE >103:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+99A text13 CODE >104:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+99E text13 CODE >106:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+99E text13 CODE >109:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9AC text13 CODE >110:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9B4 text13 CODE >111:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9B8 text13 CODE >113:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9BC text13 CODE >115:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9CA text13 CODE >116:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9CC text13 CODE >118:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9D6 text13 CODE >119:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9D8 text13 CODE >106:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9D8 text13 CODE >120:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9EA text13 CODE >121:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9EA text13 CODE >124:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+9F8 text13 CODE >127:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A08 text13 CODE >128:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A1C text13 CODE >132:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A2C text13 CODE >134:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A3A text13 CODE >135:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A48 text13 CODE >136:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A50 text13 CODE >137:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A54 text13 CODE >139:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A58 text13 CODE >141:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A66 text13 CODE >142:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A68 text13 CODE >144:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A72 text13 CODE >145:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A78 text13 CODE >153:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+A9E text13 CODE >154:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+ACE text13 CODE >155:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+AD2 text13 CODE >156:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+AD4 text13 CODE >157:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+AE4 text13 CODE >158:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+AF4 text13 CODE >162:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B04 text13 CODE >163:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B04 text13 CODE >166:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B2A text13 CODE >167:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B3E text13 CODE >172:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B48 text13 CODE >173:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B56 text13 CODE >174:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B58 text13 CODE >176:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B66 text13 CODE >177:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B6A text13 CODE >178:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B6E text13 CODE >180:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B72 text13 CODE >182:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B82 text13 CODE >183:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B84 text13 CODE >171:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B92 text13 CODE >186:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B92 text13 CODE >192:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+B94 text13 CODE >193:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+BA2 text13 CODE >194:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+BB8 text13 CODE >195:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+BBC text13 CODE >196:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+BC0 text13 CODE >197:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+BC0 text13 CODE >198:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+BD2 text13 CODE >202:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+BD2 text13 CODE >203:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+BE2 text13 CODE >204:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+BEE text13 CODE >205:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+BFC text13 CODE >206:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C26 text13 CODE >207:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C36 text13 CODE >208:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C38 text13 CODE >215:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C58 text13 CODE >216:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C68 text13 CODE >218:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C78 text13 CODE >219:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C7A text13 CODE >221:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C7A text13 CODE >225:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C88 text13 CODE >226:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C8A text13 CODE >227:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C8E text13 CODE >230:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C90 text13 CODE >232:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+C96 text13 CODE >233:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+CA4 text13 CODE >234:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+CA6 text13 CODE >236:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+CB6 text13 CODE >237:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+1AE6 text12 CODE >245:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+1AE6 text12 CODE >248:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+1AF6 text12 CODE >249:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+1B2A text12 CODE >250:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcadd.c
+1512 text11 CODE >43:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+1512 text11 CODE >47:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+1528 text11 CODE >48:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+153C text11 CODE >49:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+1566 text11 CODE >50:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+1568 text11 CODE >51:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+1578 text11 CODE >52:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+157C text11 CODE >53:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+158A text11 CODE >54:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+15A2 text11 CODE >57:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+15AC text11 CODE >58:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+15B6 text11 CODE >60:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+15CA text11 CODE >63:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+15D4 text11 CODE >64:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+15D6 text11 CODE >62:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+15E6 text11 CODE >67:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+15F6 text11 CODE >68:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+1606 text11 CODE >69:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+1616 text11 CODE >70:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fltol.c
+10DE text10 CODE >10:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+10E0 text10 CODE >15:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+10FE text10 CODE >16:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1130 text10 CODE >17:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1134 text10 CODE >18:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1134 text10 CODE >19:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1144 text10 CODE >21:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+115A text10 CODE >22:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+116E text10 CODE >23:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1172 text10 CODE >24:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1176 text10 CODE >25:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1178 text10 CODE >26:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1182 text10 CODE >24:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+11B4 text10 CODE >29:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+11B6 text10 CODE >30:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+11C2 text10 CODE >31:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+11CC text10 CODE >28:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+11CC text10 CODE >32:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+11FE text10 CODE >34:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1200 text10 CODE >35:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+120A text10 CODE >33:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1228 text10 CODE >37:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1236 text10 CODE >38:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1238 text10 CODE >39:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+123C text10 CODE >40:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1260 text10 CODE >41:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+127E text10 CODE >42:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1280 text10 CODE >43:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1290 text10 CODE >44:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
+1776 text9 CODE >4:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fleq.c
+1776 text9 CODE >7:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fleq.c
+17A4 text9 CODE >8:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fleq.c
+17B4 text9 CODE >9:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fleq.c
+17E2 text9 CODE >10:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fleq.c
+17F2 text9 CODE >11:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fleq.c
+181E text9 CODE >12:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\fleq.c
+18C2 text8 CODE >254:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\frexp.c
+18C2 text8 CODE >256:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\frexp.c
+18F4 text8 CODE >257:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\frexp.c
+1902 text8 CODE >261:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\frexp.c
+191E text8 CODE >262:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\frexp.c
+1940 text8 CODE >263:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\frexp.c
+194E text8 CODE >268:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\frexp.c
+1956 text8 CODE >269:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\frexp.c
+1958 text8 CODE >274:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\frexp.c
+1618 text7 CODE >13:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\trunc.c
+1618 text7 CODE >18:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\trunc.c
+1630 text7 CODE >19:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\trunc.c
+163E text7 CODE >20:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\trunc.c
+1652 text7 CODE >21:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\trunc.c
+1668 text7 CODE >22:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\trunc.c
+167C text7 CODE >23:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\trunc.c
+16B6 text7 CODE >24:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\trunc.c
+16C6 text7 CODE >25:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\trunc.c
+1820 text6 CODE >6:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\round.c
+1820 text6 CODE >10:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\round.c
+1868 text6 CODE >11:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\round.c
+189C text6 CODE >12:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\round.c
+18C0 text6 CODE >13:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\round.c
+1292 text5 CODE >91:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1292 text5 CODE >110:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1296 text5 CODE >111:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1298 text5 CODE >112:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+129A text5 CODE >114:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+129E text5 CODE >116:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+129E text5 CODE >119:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+12DE text5 CODE >122:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+12E2 text5 CODE >125:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+138A text5 CODE >126:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1396 text5 CODE >127:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+13B0 text5 CODE >128:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+13C8 text5 CODE >132:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+13CA text5 CODE >133:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+13CC text5 CODE >134:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+13D0 text5 CODE >135:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+13D4 text5 CODE >139:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BC0 text4 CODE >48:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BC0 text4 CODE >50:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BC4 text4 CODE >51:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BC8 text4 CODE >52:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B7A text3 CODE >38:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B7A text3 CODE >40:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B7E text3 CODE >41:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B80 text3 CODE >42:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B82 text3 CODE >44:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B8E text3 CODE >45:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BB2 text2 CODE >58:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BB2 text2 CODE >60:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BB6 text2 CODE >61:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BB8 text2 CODE >62:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BBA text2 CODE >63:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BBC text2 CODE >64:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BBE text2 CODE >65:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B54 text1 CODE >14:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B54 text1 CODE >18:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B56 text1 CODE >19:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B58 text1 CODE >23:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B62 text1 CODE >24:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B66 text1 CODE >25:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B6A text1 CODE >26:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B6E text1 CODE >27:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B72 text1 CODE >31:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B74 text1 CODE >32:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B76 text1 CODE >33:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1B78 text1 CODE >35:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+1BA4 text0 CODE >71:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1BA4 text0 CODE >73:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1BA8 text0 CODE >76:C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+1B2C cinit CODE >1248:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B2C cinit CODE >1250:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B2C cinit CODE >1253:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B2C cinit CODE >1287:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B2E cinit CODE >1288:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B30 cinit CODE >1289:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B32 cinit CODE >1290:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B34 cinit CODE >1291:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B36 cinit CODE >1292:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B38 cinit CODE >1293:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B3A cinit CODE >1294:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B3E cinit CODE >1298:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B40 cinit CODE >1299:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B42 cinit CODE >1300:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B44 cinit CODE >1303:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B46 cinit CODE >1304:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B48 cinit CODE >1305:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B4A cinit CODE >1311:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B4A cinit CODE >1313:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B4C cinit CODE >1314:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B4E cinit CODE >1315:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+1B50 cinit CODE >1316:C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_1.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\sim-rpm-rev00.X.debug.o
+_ms_time 19CE 0 CODE 0 text16 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hspace_0 1BD5 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hspace_1 7B 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hspace_2 0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hspace_4 0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+frexp@eptr 14 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\sim-rpm-rev00.X.debug.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+_timer0_ini 1B7A 0 CODE 0 text3 dist/default/debug\sim-rpm-rev00.X.debug.o
+_timer2_ini 1BB2 0 CODE 0 text2 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\sim-rpm-rev00.X.debug.o
+__L__absolute__ 0 0 ABS 0 __absolute__ dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_us_time 1A8A 0 CODE 0 text18 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lsmallconst 800 0 SMALLCONST 0 smallconst dist/default/debug\sim-rpm-rev00.X.debug.o
+_LATB F8A 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_TMR2 FCC 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+___sp 0 0 STACK 2 stack C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+_main 1BA4 0 CODE 0 text0 dist/default/debug\sim-rpm-rev00.X.debug.o
+btemp 5B 0 COMRAM 1 temp dist/default/debug\sim-rpm-rev00.X.debug.o
+___stack_hi 0 0 STACK 2 stack C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+___stack_lo 0 0 STACK 2 stack C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+start E 0 CODE 0 init C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+___flmul@aexp 33 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___flmul@bexp 34 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___flmul@prod 35 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___flmul@sign 2E 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___flmul@temp 39 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hpowerup E 0 CODE 0 powerup dist/default/debug\sim-rpm-rev00.X.debug.o
+_T0CONbits FD5 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+ttemp5 5C 0 COMRAM 1 temp dist/default/debug\sim-rpm-rev00.X.debug.o
+ttemp6 5F 0 COMRAM 1 temp dist/default/debug\sim-rpm-rev00.X.debug.o
+ttemp7 63 0 COMRAM 1 temp dist/default/debug\sim-rpm-rev00.X.debug.o
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__accesstop 60 0 ABS 0 - C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+intlevel0 0 0 CODE 0 text C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+intlevel1 0 0 CODE 0 text C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+intlevel2 0 0 CODE 0 text C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+intlevel3 0 0 CODE 0 text C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_timer0_write 1BCA 0 CODE 0 text4 dist/default/debug\sim-rpm-rev00.X.debug.o
+pwm1_ini@pr_var 76 0 BANK0 1 cstackBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+wtemp8 5C 0 COMRAM 1 temp dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_timer0_ini 1B90 0 CODE 0 text3 dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_timer2_ini 1BC0 0 CODE 0 text2 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/debug\sim-rpm-rev00.X.debug.o
+__pidataCOMRAM 1BD4 0 CODE 0 idataCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+_ADCON1 FC1 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_ADCON2 FC0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_ADRESH FC4 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_ADRESL FC3 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_lcd_com 1776 0 CODE 0 text17 dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_lcd_ini 1AE6 0 CODE 0 text15 dist/default/debug\sim-rpm-rev00.X.debug.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+_CCPR1L FBE 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+pwm1_ini@cycle 77 0 BANK0 1 cstackBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of___fleq 1820 0 CODE 0 text9 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\sim-rpm-rev00.X.debug.o
+_pwm1_ini$1539 6A 0 BANK0 1 cstackBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+_pwm1_ini$1540 6E 0 BANK0 1 cstackBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+_pwm1_ini$1541 72 0 BANK0 1 cstackBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hintcodelo E 0 CODE 0 intcodelo dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of___fladd CB8 0 CODE 0 text13 dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of___flmul 10DE 0 CODE 0 text14 dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of___flsub 1B2C 0 CODE 0 text12 dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of___fltol 1618 0 CODE 0 text11 dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of___lwdiv 19CE 0 CODE 0 text19 dist/default/debug\sim-rpm-rev00.X.debug.o
+_adc_ini 1B90 0 CODE 0 text20 dist/default/debug\sim-rpm-rev00.X.debug.o
+trunc@expon 4D 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___lwdiv@quotient 8 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___fladd@a 16 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___fladd@b 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___flmul@a 26 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___flmul@b 22 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___flsub@a 53 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___flsub@b 4F 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lintcodelo E 0 CODE 0 intcodelo dist/default/debug\sim-rpm-rev00.X.debug.o
+start_initialization 1B2C 0 CODE 0 cinit dist/default/debug\sim-rpm-rev00.X.debug.o
+_OSCCON FD3 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_pwm1_ini 1292 0 CODE 0 text5 dist/default/debug\sim-rpm-rev00.X.debug.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+_TRISBbits F93 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_TRISCbits F94 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+round@f 64 0 BANK0 1 cstackBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+round@x 60 0 BANK0 1 cstackBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+___rparam_used 1 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_pwm1_ini 13D6 0 CODE 0 text5 dist/default/debug\sim-rpm-rev00.X.debug.o
+__pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+_IPR1bits F9F 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+isa$xinst 0 0 ABS 0 - C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+ms_time@sms F 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+ms_time@tms D 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbank6 0 0 ABS 0 bank6 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbank7 0 0 ABS 0 bank7 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hcinit 0 0 ABS 0 cinit dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hconst 0 0 CONST 0 const dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hidata 0 0 CODE 0 idata dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hidloc 0 0 ABS 0 idloc dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hstack 0 0 STACK 2 stack dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext0 0 0 ABS 0 text0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext1 0 0 ABS 0 text1 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext2 0 0 ABS 0 text2 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext3 0 0 ABS 0 text3 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext4 0 0 ABS 0 text4 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext5 0 0 ABS 0 text5 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext6 0 0 ABS 0 text6 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext7 0 0 ABS 0 text7 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext8 0 0 ABS 0 text8 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext9 0 0 ABS 0 text9 dist/default/debug\sim-rpm-rev00.X.debug.o
+___lwdiv@counter A 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+_us_time 1A2C 0 CODE 0 text18 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbigram 0 0 ABS 0 bigram dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbigsfr 0 0 ABS 0 bigsfr dist/default/debug\sim-rpm-rev00.X.debug.o
+__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+___xxtofl@arg E 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___xxtofl@exp D 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___xxtofl@val 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hcomram 0 0 ABS 0 comram dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hconfig 0 0 ABS 0 config dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbank6 0 0 ABS 0 bank6 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbank7 0 0 ABS 0 bank7 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lcinit 0 0 ABS 0 cinit dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lconst 0 0 CONST 0 const dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lidata 0 0 CODE 0 idata dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lidloc 0 0 ABS 0 idloc dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lstack 0 0 STACK 2 stack dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext0 0 0 ABS 0 text0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext1 0 0 ABS 0 text1 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext2 0 0 ABS 0 text2 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext3 0 0 ABS 0 text3 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext4 0 0 ABS 0 text4 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext5 0 0 ABS 0 text5 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext6 0 0 ABS 0 text6 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext7 0 0 ABS 0 text7 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext8 0 0 ABS 0 text8 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext9 0 0 ABS 0 text9 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/debug\sim-rpm-rev00.X.debug.o
+___flmul@grs 2F 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_pic_ini 1B7A 0 CODE 0 text1 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/debug\sim-rpm-rev00.X.debug.o
+_PORTDbits F83 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_INTCONbits FF2 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Habs1 0 0 ABS 0 abs1 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hdata 0 0 ABS 0 data dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hheap 0 0 HEAP 7 heap dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hinit 12 0 CODE 0 init dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htemp 5C 0 COMRAM 1 temp dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext 0 0 ABS 0 text dist/default/debug\sim-rpm-rev00.X.debug.o
+__Labs1 0 0 ABS 0 abs1 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ldata 0 0 ABS 0 data dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lheap 0 0 HEAP 7 heap dist/default/debug\sim-rpm-rev00.X.debug.o
+__Linit E 0 CODE 0 init dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltemp 5B 0 COMRAM 1 temp dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext 0 0 ABS 0 text dist/default/debug\sim-rpm-rev00.X.debug.o
+___fleq 1776 0 CODE 0 text9 dist/default/debug\sim-rpm-rev00.X.debug.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+int$flags 5B 0 COMRAM 1 temp dist/default/debug\sim-rpm-rev00.X.debug.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hintret 0 0 ABS 0 intret dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hirdata 0 0 CODE 0 irdata dist/default/debug\sim-rpm-rev00.X.debug.o
+_ISR 8 0 CODE 0 intcode dist/default/debug\sim-rpm-rev00.X.debug.o
+_PR2 FCB 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__S0 1BD5 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__S1 7B 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__S4 0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__S5 0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_rpm_ckp 59 0 COMRAM 1 bssCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+_rpm_cmp 58 0 COMRAM 1 bssCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+i2timer0_write@timer_value 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\sim-rpm-rev00.X.debug.o
+_ECCP1AS FB6 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+___xxtofl 10DE 0 CODE 0 text10 dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_ISR 1512 0 CODE 0 intcode_body dist/default/debug\sim-rpm-rev00.X.debug.o
+int_func 13D6 0 CODE 0 intcode_body dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lintentry 0 0 ABS 0 intentry dist/default/debug\sim-rpm-rev00.X.debug.o
+us_time@sus F 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+us_time@tus D 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+_lcd_com 16C8 0 CODE 0 text17 dist/default/debug\sim-rpm-rev00.X.debug.o
+_lcd_ini 1A8A 0 CODE 0 text15 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hramtop 800 0 RAM 0 ramtop dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of___xxtofl 1292 0 CODE 0 text10 dist/default/debug\sim-rpm-rev00.X.debug.o
+__activetblptr 0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/debug\sim-rpm-rev00.X.debug.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext10 0 0 ABS 0 text10 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext11 0 0 ABS 0 text11 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext12 0 0 ABS 0 text12 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext13 0 0 ABS 0 text13 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext14 0 0 ABS 0 text14 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext15 0 0 ABS 0 text15 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext16 0 0 ABS 0 text16 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext17 0 0 ABS 0 text17 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext18 0 0 ABS 0 text18 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext19 0 0 ABS 0 text19 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext20 0 0 ABS 0 text20 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Htext22 0 0 ABS 0 text22 dist/default/debug\sim-rpm-rev00.X.debug.o
+_PIE1bits F9D 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+timer0_write@timer_value 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___fladd@signs 1E 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext10 10DE 0 CODE 0 text10 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext11 1512 0 CODE 0 text11 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext12 1AE6 0 CODE 0 text12 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext13 802 0 CODE 0 text13 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext14 CB8 0 CODE 0 text14 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext15 1A8A 0 CODE 0 text15 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext16 19CE 0 CODE 0 text16 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext17 16C8 0 CODE 0 text17 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext18 1A2C 0 CODE 0 text18 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext19 195A 0 CODE 0 text19 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext20 1B90 0 CODE 0 text20 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext22 1BCA 0 CODE 0 text22 dist/default/debug\sim-rpm-rev00.X.debug.o
+___fladd 802 0 CODE 0 text13 dist/default/debug\sim-rpm-rev00.X.debug.o
+___flmul CB8 0 CODE 0 text14 dist/default/debug\sim-rpm-rev00.X.debug.o
+___flsub 1AE6 0 CODE 0 text12 dist/default/debug\sim-rpm-rev00.X.debug.o
+___fltol 1512 0 CODE 0 text11 dist/default/debug\sim-rpm-rev00.X.debug.o
+__pintcode_body 13D6 0 CODE 0 intcode_body dist/default/debug\sim-rpm-rev00.X.debug.o
+___lwdiv 195A 0 CODE 0 text19 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbigram 0 0 ABS 0 bigram dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbigsfr 0 0 ABS 0 bigsfr dist/default/debug\sim-rpm-rev00.X.debug.o
+_ECCP1DEL FB7 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lcomram 0 0 ABS 0 comram dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lconfig 0 0 ABS 0 config dist/default/debug\sim-rpm-rev00.X.debug.o
+_LATBbits F8A 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_LATCbits F8B 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_ms_time 1A2C 0 CODE 0 text16 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lsivt_hi 0 0 ABS 0 sivt_hi dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lsivt_lo 0 0 ABS 0 sivt_lo dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\sim-rpm-rev00.X.debug.o
+___inthi_stack_hi 0 0 STACK 2 stack C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+___inthi_stack_lo 0 0 STACK 2 stack C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+___lwdiv@divisor 6 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/debug\sim-rpm-rev00.X.debug.o
+isa$std 1 0 ABS 0 - C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+stackhi 0 0 ABS 0 - C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+stacklo 0 0 ABS 0 - C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+__Lintcode 8 0 CODE 0 intcode dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lintret 0 0 ABS 0 intret dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lirdata 0 0 CODE 0 irdata dist/default/debug\sim-rpm-rev00.X.debug.o
+_ADCON0bits FC2 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+___fladd@grs 21 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+i2_timer0_write 1BCA 0 CODE 0 text22 dist/default/debug\sim-rpm-rev00.X.debug.o
+___fleq@ff1 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___fleq@ff2 8 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lspace_0 0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lspace_1 0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lspace_2 0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lspace_4 0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__pbssCOMRAM 57 0 COMRAM 1 bssCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+_PIR1bits F9E 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___fltol@exp1 44 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+end_of_initialization 1B4A 0 CODE 0 cinit dist/default/debug\sim-rpm-rev00.X.debug.o
+lcd_com@cmd 11 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hintentry 0 0 ABS 0 intentry dist/default/debug\sim-rpm-rev00.X.debug.o
+___lwdiv@dividend 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+?___fladd 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+?___flmul 22 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+?___flsub 4F 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+?___fltol 3B 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+?___lwdiv 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hreset_vec 4 0 CODE 0 reset_vec dist/default/debug\sim-rpm-rev00.X.debug.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lramtop 800 0 RAM 0 ramtop dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/debug\sim-rpm-rev00.X.debug.o
+__pcinit 1B2C 0 CODE 0 cinit dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext0 1BA4 0 CODE 0 text0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext1 1B54 0 CODE 0 text1 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext2 1BB2 0 CODE 0 text2 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext3 1B7A 0 CODE 0 text3 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext4 1BC0 0 CODE 0 text4 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext5 1292 0 CODE 0 text5 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext6 1820 0 CODE 0 text6 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext7 1618 0 CODE 0 text7 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext8 18C2 0 CODE 0 text8 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ptext9 1776 0 CODE 0 text9 dist/default/debug\sim-rpm-rev00.X.debug.o
+_turn_ctrl 57 0 COMRAM 1 bssCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext10 0 0 ABS 0 text10 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext11 0 0 ABS 0 text11 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext12 0 0 ABS 0 text12 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext13 0 0 ABS 0 text13 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext14 0 0 ABS 0 text14 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext15 0 0 ABS 0 text15 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext16 0 0 ABS 0 text16 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext17 0 0 ABS 0 text17 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext18 0 0 ABS 0 text18 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext19 0 0 ABS 0 text19 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext20 0 0 ABS 0 text20 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Ltext22 0 0 ABS 0 text22 dist/default/debug\sim-rpm-rev00.X.debug.o
+__ramtop 800 0 RAM 0 ramtop C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+__Lpowerup E 0 CODE 0 powerup dist/default/debug\sim-rpm-rev00.X.debug.o
+?___xxtofl 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+ms_time@ms B 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\sim-rpm-rev00.X.debug.o
+__H__absolute__ 0 0 ABS 0 __absolute__ dist/default/debug\sim-rpm-rev00.X.debug.o
+___fladd@aexp 1F 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___fladd@bexp 20 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___fltol@sign1 43 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__psmallconst 800 0 SMALLCONST 0 smallconst dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_ofi2_timer0_write 1BD4 0 CODE 0 text22 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\sim-rpm-rev00.X.debug.o
+_pic_ini 1B54 0 CODE 0 text1 dist/default/debug\sim-rpm-rev00.X.debug.o
+___heap_hi 0 0 ABS 0 - C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+___heap_lo 0 0 ABS 0 - C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+___fltol@f1 3B 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+___param_bank 0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+___intlo_stack_hi 0 0 STACK 2 stack C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+___intlo_stack_lo 0 0 STACK 2 stack C:\Users\casti\AppData\Local\Temp\xcAsav4.\driver_tmp_9.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of__initialization 1B4A 0 CODE 0 cinit dist/default/debug\sim-rpm-rev00.X.debug.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/debug\sim-rpm-rev00.X.debug.o
+frexp@value 10 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+?_round 60 0 BANK0 1 cstackBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+?_trunc 45 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/debug\sim-rpm-rev00.X.debug.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_adc_ini 1BA4 0 CODE 0 text20 dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_main 1BB2 0 CODE 0 text0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__pintcode 8 0 CODE 0 intcode dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_frexp 195A 0 CODE 0 text8 dist/default/debug\sim-rpm-rev00.X.debug.o
+_PORTD F83 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_T0CON FD5 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_T2CON FCA 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_TMR0H FD7 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_TMR0L FD6 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_TRISA F92 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_TRISB F93 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+_TRISD F95 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_round 18C2 0 CODE 0 text6 dist/default/debug\sim-rpm-rev00.X.debug.o
+__end_of_trunc 16C8 0 CODE 0 text7 dist/default/debug\sim-rpm-rev00.X.debug.o
+__HRAM 0 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hbss 0 0 RAM 1 bss dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hram 0 0 ABS 0 ram dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hsfr 0 0 ABS 0 sfr dist/default/debug\sim-rpm-rev00.X.debug.o
+__LRAM 1 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lbss 0 0 RAM 1 bss dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lram 0 0 ABS 0 ram dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lsfr 0 0 ABS 0 sfr dist/default/debug\sim-rpm-rev00.X.debug.o
+_errno 79 0 BANK0 1 bssBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+_frexp 18C2 0 CODE 0 text8 dist/default/debug\sim-rpm-rev00.X.debug.o
+us_time@us B 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+_round 1820 0 CODE 0 text6 dist/default/debug\sim-rpm-rev00.X.debug.o
+_trunc 1618 0 CODE 0 text7 dist/default/debug\sim-rpm-rev00.X.debug.o
+_CCP1CON FBD 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hsivt_hi 0 0 ABS 0 sivt_hi dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hsivt_lo 0 0 ABS 0 sivt_lo dist/default/debug\sim-rpm-rev00.X.debug.o
+__initialization 1B2C 0 CODE 0 cinit dist/default/debug\sim-rpm-rev00.X.debug.o
+___xxtofl@sign C 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__pbssBANK0 79 0 BANK0 1 bssBANK0 dist/default/debug\sim-rpm-rev00.X.debug.o
+__pdataCOMRAM 5A 0 COMRAM 1 dataCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+_T2CONbits FCA 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+trunc@i 49 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+trunc@x 45 0 COMRAM 1 cstackCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hsmallconst 802 0 SMALLCONST 0 smallconst dist/default/debug\sim-rpm-rev00.X.debug.o
+_timer0_write 1BC0 0 CODE 0 text4 dist/default/debug\sim-rpm-rev00.X.debug.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/debug\sim-rpm-rev00.X.debug.o
+_CCP1CONbits FBD 0 ABS 0 - dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\sim-rpm-rev00.X.debug.o
+__Hintcode E 0 CODE 0 intcode dist/default/debug\sim-rpm-rev00.X.debug.o
+_interrupt_timer0 5A 0 COMRAM 1 dataCOMRAM dist/default/debug\sim-rpm-rev00.X.debug.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text13 0 802 802 13D3 1
+cstackCOMRAM 1 1 1 5B 1
+cstackBANK0 1 60 60 1B 1
+reset_vec 0 0 0 4 1
+intcode 0 8 8 A 1
+smallconst 0 800 800 2 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
