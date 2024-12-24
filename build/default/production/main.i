@@ -5846,19 +5846,24 @@ void us_time(uint16_t us);
 # 21 "hardware.h"
 void pic_ini(void);
 void timer0_ini(void);
+void timer1_ini(void);
+void timer1_write(uint16_t timer_value);
 void timer2_ini(void);
 void timer0_write(uint16_t timer_value);
 void timer2_write( uint8_t timer_value);
 void adc_ini(void);
 uint16_t adc_read(uint8_t ch);
 void pwm1_ini(void);
+void pwm2_ini(void);
 void pwm1_setDutyPot(uint16_t ccpr1_aux);
+void pwm2_setDutyPot(uint16_t ccpr2_aux);
 void pwm1_setPeriod(uint8_t period);
+void pwm2_setPeriod(uint8_t period);
 
-# 38 "main.h"
+# 17 "main.h"
 void cmp_sensor(void);
 
-# 49
+# 29
 typedef unsigned char uint8_t;
 typedef signed char int8_t;
 typedef unsigned short uint16_t;
@@ -5871,11 +5876,24 @@ uint8_t interrupt_timer0 = 0;
 uint8_t rpm_ckp = 0;
 uint8_t rpm_cmp = 0;
 uint8_t turn_ctrl;
+uint8_t wave = 0;
+uint8_t count = 0;
+uint8_t i = 0;
 
-# 22
+
+
+uint16_t sinewave[] =
+{0,22,49,86,132,185,246,311,380,415,450,
+415,380,311,246,185,132,86,49,22,0,22,
+49,86,132,185,246,311,380,415,450,
+415,380,311,246,185,132,86,49,22,0
+};
+
+# 34
 void __interrupt() ISR()
 {
 
+# 40
 if(INTCONbits.TMR0IF)
 {
 INTCONbits.TMR0IF = 0;
@@ -5884,8 +5902,27 @@ LATBbits.LATB7 = ~LATBbits.LATB7;
 
 }
 
+# 52
+if(TMR1IF)
+{
+
+
+
+TMR1IF = 0;
+timer1_write(0xCF2C);
+
+LATBbits.LATB5 = ~PORTBbits.RB5;
+pwm2_setDutyPot((float)(sinewave[count])*1.15);
+
+count++;
+if(count > 41) count = 0;
+
+}
+
+# 72
 if(PIR1bits.TMR2IF)
 {
+LATBbits.LATB6 = ~PORTBbits.RB6;
 rpm_ckp++;
 PIR1bits.TMR2IF = 0;
 
@@ -5894,7 +5931,6 @@ if(rpm_ckp == 59)
 LATBbits.LATB0 = 0;
 turn_ctrl++;
 LATCbits.LATC2 = 0;
-
 }
 
 if(rpm_ckp == 60)
@@ -5905,9 +5941,7 @@ LATBbits.LATB0 = 1;
 if(turn_ctrl == 2)
 {
 turn_ctrl = 0;
-
 }
-
 }
 
 
@@ -5927,14 +5961,17 @@ if(rpm_cmp > 119) rpm_cmp = 0;
 
 }
 
-# 79
+# 116
 void main()
 {
 pic_ini();
+
 while(1)
 {
-LATBbits.LATB5 = ~PORTBbits.RB5;
-_delay((unsigned long)((500)*(8000000/4000.0)));
+LATBbits.LATB3 = 1;
+_delay((unsigned long)((100)*(8000000/4000.0)));
+LATBbits.LATB3 = 0;
+_delay((unsigned long)((100)*(8000000/4000.0)));
 __nop();
 
 }

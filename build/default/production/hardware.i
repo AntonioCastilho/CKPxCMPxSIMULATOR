@@ -5771,10 +5771,10 @@ extern double fmod(double, double);
 extern double trunc(double);
 extern double round(double);
 
-# 38 "main.h"
+# 17 "main.h"
 void cmp_sensor(void);
 
-# 49
+# 29
 typedef unsigned char uint8_t;
 typedef signed char int8_t;
 typedef unsigned short uint16_t;
@@ -5797,20 +5797,25 @@ void us_time(uint16_t us);
 # 21 "hardware.h"
 void pic_ini(void);
 void timer0_ini(void);
+void timer1_ini(void);
+void timer1_write(uint16_t timer_value);
 void timer2_ini(void);
 void timer0_write(uint16_t timer_value);
 void timer2_write( uint8_t timer_value);
 void adc_ini(void);
 uint16_t adc_read(uint8_t ch);
 void pwm1_ini(void);
+void pwm2_ini(void);
 void pwm1_setDutyPot(uint16_t ccpr1_aux);
+void pwm2_setDutyPot(uint16_t ccpr2_aux);
 void pwm1_setPeriod(uint8_t period);
+void pwm2_setPeriod(uint8_t period);
 
-# 14 "hardware.c"
+# 13 "hardware.c"
 void pic_ini(void)
 {
 
-# 18
+# 17
 INTCONbits.GIE = 1;
 INTCONbits.PEIE_GIEL = 1;
 
@@ -5818,11 +5823,12 @@ INTCONbits.PEIE_GIEL = 1;
 lcd_ini(); lcd_com(0x0C);
 adc_ini();
 timer0_ini();
+timer1_ini();
 timer2_ini();
 pwm1_ini();
+pwm2_ini();
 
-# 31
-TRISCbits.RC2 = 0;
+# 35
 TRISB = 0x00;
 LATB = 0xFF;
 
@@ -5836,6 +5842,7 @@ T0CONbits.TMR0ON = 1;
 INTCONbits.TMR0IE = 1;
 
 timer0_write(0xFE0C);
+
 }
 
 
@@ -5843,9 +5850,31 @@ void timer0_write( uint16_t timer_value)
 {
 TMR0L = (timer_value & 0x00FF);
 TMR0H = (timer_value >> 8) & 0x00FF;
+
 }
 
-# 58
+
+void timer1_ini(void)
+{
+T1CON = 0xB1;
+TMR1L = 0;
+TMR1H = 0;
+PIE1bits.TMR1IE = 1;
+
+TMR1IF = 0;
+
+timer1_write(0xCF2C);
+
+}
+
+
+void timer1_write(uint16_t timer_value)
+{
+TMR1L = (timer_value & 0x00FF);
+TMR1H = (timer_value >> 8) & 0x00FF;
+}
+
+# 85
 void timer2_ini(void)
 {
 T2CON = 0x07;
@@ -5853,6 +5882,7 @@ PIE1bits.TMR2IE = 1;
 PIR1bits.TMR2IF = 0;
 IPR1bits.TMR2IP = 1;
 TMR2 = 0;
+
 }
 
 
@@ -5865,6 +5895,7 @@ ADCON2 = 0xBE;
 ADCON0bits.ADON = 1;
 ADRESH=0;
 ADRESL=0;
+
 }
 
 
@@ -5876,40 +5907,68 @@ ADCON0bits.GO = 1;
 while(ADCON0bits.GO_DONE == 1);
 value = (uint16_t)((ADRESH << 8) + ADRESL);
 return value;
+
 }
 
 
 void pwm1_ini(void)
 {
 
-# 96
+TRISCbits.RC2 = 0;
+
 OSCCON = 0x72;
 T2CONbits.TMR2ON = 1;
 TMR2 = 0;
 
+
 CCP1CON = 0X0F;
 
+
 uint8_t pr_var = 0;
-
-
-pr_var = (uint8_t)(round((1/(float)900)/((4/(float)8000000) * (float)16 * (float)1)));
-
+pr_var =
+(uint8_t)(round((1/(float)900)/((4/(float)8000000) *
+(float)16 * (float)1)));
 
 PR2 = pr_var;
 
-uint16_t cycle = (uint16_t)(round(((((float)500)/
-1000.0)*4.0*((float)(pr_var)+1.0))));
+
+uint16_t cycle =
+(uint16_t)(round(((((float)500)/1000.0)*4.0*(
+(float)(pr_var)+1.0))));
+
 CCP1CONbits.DC1B0 = cycle;
 CCP1CONbits.DC1B1 = cycle >> 1;
 CCPR1L = cycle >> 2;
 
-# 118
+# 153
 TRISBbits.TRISB0 = 0;
 LATBbits.LATB0 = 1;
+
 ECCP1DEL = 0b10000000;
 ECCP1AS = 0b11010000;
 
+}
 
+
+void pwm2_ini(void)
+{
+
+TRISCbits.RC1 = 0;
+
+# 172
+CCP2CON = 0X0F;
+
+
+uint8_t pr_var = PR2;
+
+# 183
+uint16_t cycle2 =
+(uint16_t)(round(((((float)500)/1000.0)*4.0*(
+(float)(pr_var)+1.0))));
+
+CCP2CONbits.DC2B0 = cycle2;
+CCP2CONbits.DC2B1 = cycle2 >> 1;
+CCPR2L = cycle2 >> 2;
 
 }
 
@@ -5918,7 +5977,21 @@ void pwm1_setDutyPot(uint16_t ccpr1_aux)
 CCP1CONbits.DC1B0 = ccpr1_aux;
 CCP1CONbits.DC1B1 = ccpr1_aux >> 1;
 CCPR1L = ccpr1_aux >> 2;
+
 }
+
+
+
+
+void pwm2_setDutyPot(uint16_t ccpr2_aux)
+{
+CCP2CONbits.DC2B0 = ccpr2_aux;
+CCP2CONbits.DC2B1 = ccpr2_aux >> 1;
+CCPR2L = ccpr2_aux >> 2;
+
+}
+
+
 
 
 void pwm1_setPeriod(uint8_t period)

@@ -3653,21 +3653,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 114: void us_time(uint16_t us);
 [; ;hardware.h: 21: void pic_ini(void);
 [; ;hardware.h: 22: void timer0_ini(void);
-[; ;hardware.h: 23: void timer2_ini(void);
-[; ;hardware.h: 24: void timer0_write(uint16_t timer_value);
-[; ;hardware.h: 25: void timer2_write( uint8_t timer_value);
-[; ;hardware.h: 26: void adc_ini(void);
-[; ;hardware.h: 27: uint16_t adc_read(uint8_t ch);
-[; ;hardware.h: 28: void pwm1_ini(void);
-[; ;hardware.h: 29: void pwm1_setDutyPot(uint16_t ccpr1_aux);
-[; ;hardware.h: 30: void pwm1_setPeriod(uint8_t period);
-[; ;main.h: 38: void cmp_sensor(void);
-[; ;main.h: 49: typedef unsigned char uint8_t;
-[; ;main.h: 50: typedef signed char int8_t;
-[; ;main.h: 51: typedef unsigned short uint16_t;
-[; ;main.h: 52: typedef signed short int16_t;
-[; ;main.h: 53: typedef unsigned long uint32_t;
-[; ;main.h: 54: typedef signed long int32_t;
+[; ;hardware.h: 23: void timer1_ini(void);
+[; ;hardware.h: 24: void timer1_write(uint16_t timer_value);
+[; ;hardware.h: 25: void timer2_ini(void);
+[; ;hardware.h: 26: void timer0_write(uint16_t timer_value);
+[; ;hardware.h: 27: void timer2_write( uint8_t timer_value);
+[; ;hardware.h: 28: void adc_ini(void);
+[; ;hardware.h: 29: uint16_t adc_read(uint8_t ch);
+[; ;hardware.h: 30: void pwm1_ini(void);
+[; ;hardware.h: 31: void pwm2_ini(void);
+[; ;hardware.h: 32: void pwm1_setDutyPot(uint16_t ccpr1_aux);
+[; ;hardware.h: 33: void pwm2_setDutyPot(uint16_t ccpr2_aux);
+[; ;hardware.h: 34: void pwm1_setPeriod(uint8_t period);
+[; ;hardware.h: 35: void pwm2_setPeriod(uint8_t period);
+[; ;main.h: 17: void cmp_sensor(void);
+[; ;main.h: 29: typedef unsigned char uint8_t;
+[; ;main.h: 30: typedef signed char int8_t;
+[; ;main.h: 31: typedef unsigned short uint16_t;
+[; ;main.h: 32: typedef signed short int16_t;
+[; ;main.h: 33: typedef unsigned long uint32_t;
+[; ;main.h: 34: typedef signed long int32_t;
 "52 lcd.c
 [v _lcd_com `(v ~T0 @X0 1 ef1`uc ]
 "53
