@@ -17,17 +17,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_ini `(v ~T0 @X0 0 ef ]
 "105
 [v _lcd_com `(v ~T0 @X0 0 ef1`uc ]
-"28 hardware.h
+"29 hardware.h
 [v _adc_ini `(v ~T0 @X0 0 ef ]
-"22
-[v _timer0_ini `(v ~T0 @X0 0 ef ]
 "23
+[v _timer0_ini `(v ~T0 @X0 0 ef ]
+"24
 [v _timer1_ini `(v ~T0 @X0 0 ef ]
-"25
+"26
 [v _timer2_ini `(v ~T0 @X0 0 ef ]
-"30
-[v _pwm1_ini `(v ~T0 @X0 0 ef ]
 "31
+[v _pwm1_ini `(v ~T0 @X0 0 ef ]
+"32
 [v _pwm2_ini `(v ~T0 @X0 0 ef ]
 "3625 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
 [v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
@@ -46,7 +46,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S341 . . . ]
 "8089
 [v _T0CONbits `VS341 ~T0 @X0 0 e@4053 ]
-"26 hardware.h
+"27 hardware.h
 [v _timer0_write `(v ~T0 @X0 0 ef1`ui ]
 "8146 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
@@ -71,7 +71,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIE1bits `VS169 ~T0 @X0 0 e@3997 ]
 "10834
 [v _TMR1IF `Vb ~T0 @X0 0 e@31984 ]
-"24 hardware.h
+"25 hardware.h
 [v _timer1_write `(v ~T0 @X0 0 ef1`ui ]
 "7200 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
 [v _T2CON `Vuc ~T0 @X0 0 e@4042 ]
@@ -3858,21 +3858,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 111: uint8_t digit_counter(uint16_t number);
 [; ;lcd.h: 113: void ms_time(uint16_t ms);
 [; ;lcd.h: 114: void us_time(uint16_t us);
-[; ;hardware.h: 21: void pic_ini(void);
-[; ;hardware.h: 22: void timer0_ini(void);
-[; ;hardware.h: 23: void timer1_ini(void);
-[; ;hardware.h: 24: void timer1_write(uint16_t timer_value);
-[; ;hardware.h: 25: void timer2_ini(void);
-[; ;hardware.h: 26: void timer0_write(uint16_t timer_value);
-[; ;hardware.h: 27: void timer2_write( uint8_t timer_value);
-[; ;hardware.h: 28: void adc_ini(void);
-[; ;hardware.h: 29: uint16_t adc_read(uint8_t ch);
-[; ;hardware.h: 30: void pwm1_ini(void);
-[; ;hardware.h: 31: void pwm2_ini(void);
-[; ;hardware.h: 32: void pwm1_setDutyPot(uint16_t ccpr1_aux);
-[; ;hardware.h: 33: void pwm2_setDutyPot(uint16_t ccpr2_aux);
-[; ;hardware.h: 34: void pwm1_setPeriod(uint8_t period);
-[; ;hardware.h: 35: void pwm2_setPeriod(uint8_t period);
+[; ;hardware.h: 22: void pic_ini(void);
+[; ;hardware.h: 23: void timer0_ini(void);
+[; ;hardware.h: 24: void timer1_ini(void);
+[; ;hardware.h: 25: void timer1_write(uint16_t timer_value);
+[; ;hardware.h: 26: void timer2_ini(void);
+[; ;hardware.h: 27: void timer0_write(uint16_t timer_value);
+[; ;hardware.h: 28: void timer2_write( uint8_t timer_value);
+[; ;hardware.h: 29: void adc_ini(void);
+[; ;hardware.h: 30: uint16_t adc_read(uint8_t ch);
+[; ;hardware.h: 31: void pwm1_ini(void);
+[; ;hardware.h: 32: void pwm2_ini(void);
+[; ;hardware.h: 33: void pwm1_setDutyPot(uint16_t ccpr1_aux);
+[; ;hardware.h: 34: void pwm2_setDutyPot(uint16_t ccpr2_aux);
+[; ;hardware.h: 35: void pwm1_setPeriod(uint8_t period);
+[; ;hardware.h: 36: void pwm2_setPeriod(uint8_t period);
 "13 hardware.c
 [v _pic_ini `(v ~T0 @X0 1 ef ]
 "14

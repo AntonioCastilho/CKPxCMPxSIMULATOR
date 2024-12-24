@@ -17,23 +17,17 @@
  * * HD44780U dot-matrix liquid crystal display controller Datasheet
  *   <https://www.digchip.com/datasheets/parts/datasheet/740/HD44780U-pdf.php>
  * 
- * 03/23/2022| Antonio Castilho  | Function has been created
+ * 03/23/2022| Author: Automotive Technologist Antonio Castilho| Function created
  ******************************************************************************/
 
-/******************************************************************************/
-// Includes
-/******************************************************************************/
+/*******************************************************************************
+ * Includes
+ ******************************************************************************/
 #include <xc.h>
 #include <stdlib.h>
 #include <math.h>
 #include "main.h"
 #include "lcd.h"
-
-//#include "hardware.h"
-
-//#include "timer.h"
-//#include "adc.h"
-
 /******************************************************************************/
 
 /******************************************************************************
@@ -42,12 +36,7 @@
  * Example: lcd_com(0x01);
  * Input: Command in 8 bits, conforme LCD datasheet.
  * Output: void
- * ****************************************************************************
- * Date      | Author            | Description
- * **********|*******************|*********************************************
- * 03/23/2022| Antonio Castilho  | Function has been created
- * 07/01/2023| Antonio Castilho  | Created function to waste time and replaced in LCD functions
- *                                             | us_time() e ms_time() that repalces time_waster_us() and others
+ * Created in: 03/26/2022 by Tecnologo Antonio Aparecido Ariza Castilho
  ******************************************************************************/
 void lcd_com(uint8_t cmd)
 {
@@ -78,9 +67,7 @@ void lcd_com(uint8_t cmd)
 
     if(cmd == 0x01) us_time(100);
     if(cmd == 0x00) us_time(100);       
-}
-/* end of function
- * void lcd_com(uint8_t cmd)
+} /* end of function void lcd_com(uint8_t cmd)
 *******************************************************************************/
 
 /******************************************************************************
@@ -90,7 +77,7 @@ void lcd_com(uint8_t cmd)
  *              cursor on and blinking.
  * Input: void
  * Output: void
- * Created in: 03/23/2022 by Antonio Aparecido Ariza Castilho
+ * Created in: 03/23/2022 by Tecnologo Antonio Aparecido Ariza Castilho
  ******************************************************************************/
 void lcd_ini(void)
 {
@@ -116,9 +103,7 @@ void lcd_ini(void)
     lcd_com(0x0F); //Display on/off control. Display on, cursor on, cursor blink.
     
     lcd_com(0x01); // Clear display.    
-}
-/* end of function
- * void lcd_ini(void)
+} /* end of function void lcd_ini(void)
 *******************************************************************************/
 
 /******************************************************************************
@@ -127,7 +112,7 @@ void lcd_ini(void)
  *              It is a helper function, for lcd_printString. 
  * Input: Byte representing an ASCII value, valid for the lcd.
  * Output: void
- * Created in: 03/26/2022 by Antonio Aparecido Ariza Castilho
+ * Created in: 03/26/2022 by Tecnologo Antonio Aparecido Ariza Castilho
  ******************************************************************************/
 void lcd_prtChar(uint8_t dat)
 {
@@ -152,9 +137,7 @@ void lcd_prtChar(uint8_t dat)
     us_time(40);
     LCD_E = 0;
     us_time(40);
-}
-/* end of function 
- * void lcd_prtChar(uint8_t dat)
+} /* end of function void lcd_prtChar(uint8_t dat)
 *******************************************************************************/
 
 /******************************************************************************
@@ -165,7 +148,7 @@ void lcd_prtChar(uint8_t dat)
  * Example: lcd_prtStr(0,0,("Seja Bem Vindo!!"));
  * Input: Row and column and the string.
  * Output: void
- * Created in: 03/26/2022 by Antonio Aparecido Ariza Castilho
+ * Created in: 03/26/2022 by Tecnologo Antonio Aparecido Ariza Castilho
  ******************************************************************************/
 void lcd_prtStr(const uint8_t row, const uint8_t col, const uint8_t *str)
 {
@@ -192,9 +175,8 @@ void lcd_prtStr(const uint8_t row, const uint8_t col, const uint8_t *str)
       
     // TODO : Generate a code that scrolls the message when it has more 
     //        than 16 characters.
-}
-/* end of function
- * lcd_prtStr(int8_t row, int8_t col, const uint8_t *str)
+    
+} /* end of function lcd_prtStr(int8_t row, int8_t col, const uint8_t *str)
 *******************************************************************************/
 
 /******************************************************************************
@@ -216,16 +198,15 @@ void lcd_prtInt(const uint8_t row, const uint8_t col, const int32_t value)
     itoa(str, value, 10);
     
     lcd_prtStr(row,col,str);
-}// end of function
-
-
+ }// end of function void lcd_prtInt(const uint8_t row, const uint8_t col, const int32_t value)
+/******************************************************************************/
 
 /*******************************************************************************
  * Function: uint8_t digit_counter(uint16_t number);
- * Description: Helper function to count the number of digits of an integer
+ * Description: Helper function to counts the number of digits in an integer
  * Input: Integer.
  * Output: Number of digits.
- * Created in: 04/17/2022 by Antonio Aparecido Ariza Castilho
+ * Created in: 04/17/2022 by Tecnólogo Antonio Aparecido Ariza Castilho
  ******************************************************************************/
 uint8_t digit_counter(uint16_t number)
 {
@@ -234,42 +215,34 @@ uint8_t digit_counter(uint16_t number)
     {
         number = number / 10;
         n++;
-        
     }
     return n;
-}//end of function uint8_t digit_counter(uint16_t number);
+} //end of function uint8_t digit_counter(uint16_t number);
+/******************************************************************************/
 
 /*******************************************************************************
  * Function: void ms_time(uint16_t ms);
  * Description: Function to spend CPU time
  * Input: Integer for the value of milliseconds to spend.
  * Output: void.
- * Created in: 07/01/2023 by Antonio Aparecido Ariza Castilho
+ * Created in: 07/01/2023 by Tecnólogo Antonio Aparecido Ariza Castilho
  ******************************************************************************/
-//48000000 
-//48000000/4 = 12000000
-//        cilco = 1/12000000 = 8.333E-8 s
-//                                        0.0000000833 s 
-//                                        0.08333 us  
-//                                        0.00008333 ms  
-//                                        833 ns
-        
 void ms_time(uint16_t ms)
 {
-      
     for(uint16_t tms=0; tms < ms/10; tms++)
     {
         for(uint16_t sms=0; sms < ((_XTAL_FREQ/4)/1000); sms++);
 
     }
 } // end ms_time(uint16 ms)
+/******************************************************************************/
 
 /*******************************************************************************
  * Function: void us_time(uint16_t ms);
  * Description: Function to spend CPU time
  * Input: Integer for the microseconds to spend value
  * Output: void.
- * Created in: 07/01/2023 by Antonio Aparecido Ariza Castilho
+ * Created in: 07/01/2023 by Tecnólogo Antonio Aparecido Ariza Castilho
  ******************************************************************************/
 void us_time(uint16_t us)
 {
@@ -278,3 +251,4 @@ void us_time(uint16_t us)
         for(uint16_t sus=0; sus < (_XTAL_FREQ>>2)/1000000; sus++);
     }
 } // end us_time(uint16_t us)
+/******************************************************************************/

@@ -1,6 +1,13 @@
 /*
  * File:   main.c
- * Author: Tecnologo Antonio Castilho
+ * Author: Automotive Technologist Antonio Castilho
+ * 
+ * Program environment: MPLAB X IDE v6.20, XC8 v2.50, C std C90, PIC18F455
+ * Reference: Microchip PIC18F4550 Datasheet.
+ * 
+ * MIT License  (see: LICENSE em github)
+ * Copyright (c) 2022 Antonio Aparecido Ariza Castilho
+ * <https://github.com/AntonioCastilho>
  *
  * Created on 4 de Dezembro de 2024, 21:43
  */
@@ -76,11 +83,11 @@ void __interrupt() ISR()
         rpm_ckp++;                // Increment for a new pulse of the phonic wheel.
         PIR1bits.TMR2IF = 0;      // Clear the timer2 interrupt flag.
         
-        if(rpm_ckp == 59)         // The minus two teeth gap has reached. One turn completed on the next pulse.
-        {
+        if(rpm_ckp == 59)         // The minus two teeth gap has reached.  // One turn completed on the next pulse.
+        {                        
             LATBbits.LATB0 = 0;   // Causes the CCP/PWM to shutdown.
             turn_ctrl++;          // Increases lap control.
-            LATCbits.LATC2 = 0; // Ensures PWM output remains LOW during minus 2 tooth failure.
+            LATCbits.LATC2 = 0;   // Ensures PWM output remains LOW during minus 2 tooth failure.
         } // end of if "rpm_ckp == 59".
         
         if(rpm_ckp == 60)         // lap completed.

@@ -5843,7 +5843,7 @@ uint8_t digit_counter(uint16_t number);
 void ms_time(uint16_t ms);
 void us_time(uint16_t us);
 
-# 21 "hardware.h"
+# 22 "hardware.h"
 void pic_ini(void);
 void timer0_ini(void);
 void timer1_ini(void);
@@ -5883,17 +5883,18 @@ uint8_t i = 0;
 
 
 uint16_t sinewave[] =
-{0,22,49,86,132,185,246,311,380,415,450,
+{
+0,22,49,86,132,185,246,311,380,415,450,
 415,380,311,246,185,132,86,49,22,0,22,
 49,86,132,185,246,311,380,415,450,
 415,380,311,246,185,132,86,49,22,0
 };
 
-# 34
+# 35
 void __interrupt() ISR()
 {
 
-# 40
+# 41
 if(INTCONbits.TMR0IF)
 {
 INTCONbits.TMR0IF = 0;
@@ -5902,7 +5903,7 @@ LATBbits.LATB7 = ~LATBbits.LATB7;
 
 }
 
-# 52
+# 53
 if(TMR1IF)
 {
 
@@ -5919,7 +5920,7 @@ if(count > 41) count = 0;
 
 }
 
-# 72
+# 73
 if(PIR1bits.TMR2IF)
 {
 LATBbits.LATB6 = ~PORTBbits.RB6;
@@ -5961,7 +5962,7 @@ if(rpm_cmp > 119) rpm_cmp = 0;
 
 }
 
-# 116
+# 117
 void main()
 {
 pic_ini();

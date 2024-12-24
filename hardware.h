@@ -1,7 +1,17 @@
 /*
  * hardware.h
- * Mapeamento de hardware
+ * Author: Automotive Technologist Antonio Castilho
+ * 
+ * Program environment: MPLAB X IDE v6.20, XC8 v2.50, C std C90, PIC18F455
+ * Reference: Microchip PIC18F4550 Datasheet.
+ * 
+ * MIT License  (see: LICENSE em github)
+ * Copyright (c) 2022 Antonio Aparecido Ariza Castilho
+ * <https://github.com/AntonioCastilho>
+ *
+ * Created on 8 de Dezembro de 2024, 12:01
  */
+
 #ifndef HARDWARE_H
 #define	HARDWARE_H
 

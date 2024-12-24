@@ -70,21 +70,21 @@
 [v _pwm2_ini pwm2_ini `(v  1 e 1 0 ]
 "204
 [v _pwm2_setDutyPot pwm2_setDutyPot `(v  1 e 1 0 ]
-"52 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+"41 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
 [v _lcd_com lcd_com `(v  1 e 1 0 ]
-"95
+"82
 [v _lcd_ini lcd_ini `(v  1 e 1 0 ]
-"132
+"117
 [v _lcd_prtChar lcd_prtChar `(v  1 e 1 0 ]
-"170
+"153
 [v _lcd_prtStr lcd_prtStr `(v  1 e 1 0 ]
-"257
+"231
 [v _ms_time ms_time `(v  1 e 1 0 ]
-"274
+"248
 [v _us_time us_time `(v  1 e 1 0 ]
-"34 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+"35 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"116
+"117
 [v _main main `(v  1 e 1 0 ]
 [s S124 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
@@ -437,10 +437,10 @@
 [v _count count `uc  1 e 1 0 ]
 "24
 [v _sinewave sinewave `[41]ui  1 e 82 0 ]
-"116
+"117
 [v _main main `(v  1 e 1 0 ]
 {
-"130
+"131
 } 0
 "13 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
 [v _pic_ini pic_ini `(v  1 e 1 0 ]
@@ -599,41 +599,41 @@
 [v ___flmul@a a `d  1 p 4 34 ]
 "205
 } 0
-"95 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
+"82 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
 [v _lcd_ini lcd_ini `(v  1 e 1 0 ]
 {
-"119
+"106
 } 0
-"257
+"231
 [v _ms_time ms_time `(v  1 e 1 0 ]
 {
-"262
+"235
 [v ms_time@sms sms `ui  1 a 2 11 ]
-"260
+"233
 [v ms_time@tms tms `ui  1 a 2 9 ]
-"257
+"231
 [v ms_time@ms ms `ui  1 p 2 7 ]
-"265
+"238
 } 0
-"52
+"41
 [v _lcd_com lcd_com `(v  1 e 1 0 ]
 {
 [v lcd_com@cmd cmd `uc  1 p 1 wreg ]
 [v lcd_com@cmd cmd `uc  1 p 1 wreg ]
-"54
+"43
 [v lcd_com@cmd cmd `uc  1 p 1 13 ]
-"81
+"70
 } 0
-"274
+"248
 [v _us_time us_time `(v  1 e 1 0 ]
 {
-"278
+"252
 [v us_time@sus sus `ui  1 a 2 11 ]
-"276
+"250
 [v us_time@tus tus `ui  1 a 2 9 ]
-"274
+"248
 [v us_time@us us `ui  1 p 2 7 ]
-"280
+"254
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
@@ -652,10 +652,10 @@
 {
 "106
 } 0
-"34 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+"35 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"111
+"112
 } 0
 "74 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
 [v i2_timer1_write timer1_write `(v  1 e 1 0 ]

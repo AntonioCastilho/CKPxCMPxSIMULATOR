@@ -5794,7 +5794,7 @@ uint8_t digit_counter(uint16_t number);
 void ms_time(uint16_t ms);
 void us_time(uint16_t us);
 
-# 21 "hardware.h"
+# 22 "hardware.h"
 void pic_ini(void);
 void timer0_ini(void);
 void timer1_ini(void);

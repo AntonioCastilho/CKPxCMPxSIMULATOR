@@ -5783,7 +5783,7 @@ uint8_t digit_counter(uint16_t number);
 void ms_time(uint16_t ms);
 void us_time(uint16_t us);
 
-# 21 "hardware.h"
+# 22 "hardware.h"
 void pic_ini(void);
 void timer0_ini(void);
 void timer1_ini(void);
@@ -5811,7 +5811,7 @@ typedef signed short int16_t;
 typedef unsigned long uint32_t;
 typedef signed long int32_t;
 
-# 52 "lcd.c"
+# 41 "lcd.c"
 void lcd_com(uint8_t cmd)
 {
 PORTD = 0xF0;
@@ -5843,7 +5843,7 @@ if(cmd == 0x01) us_time(100);
 if(cmd == 0x00) us_time(100);
 }
 
-# 95
+# 82
 void lcd_ini(void)
 {
 ms_time(10);
@@ -5870,7 +5870,7 @@ lcd_com(0x0F);
 lcd_com(0x01);
 }
 
-# 132
+# 117
 void lcd_prtChar(uint8_t dat)
 {
 PORTD = 0xF0;
@@ -5896,7 +5896,7 @@ PORTDbits.RD0 = 0;
 us_time(40);
 }
 
-# 170
+# 153
 void lcd_prtStr(const uint8_t row, const uint8_t col, const uint8_t *str)
 {
 
@@ -5922,9 +5922,10 @@ str++;
 
 
 
+
 }
 
-# 213
+# 195
 void lcd_prtInt(const uint8_t row, const uint8_t col, const int32_t value)
 {
 uint8_t str[((sizeof(value))+1)];
@@ -5933,7 +5934,7 @@ itoa(str, value, 10);
 lcd_prtStr(row,col,str);
 }
 
-# 230
+# 211
 uint8_t digit_counter(uint16_t number)
 {
 uint8_t n = 0;
@@ -5946,10 +5947,9 @@ n++;
 return n;
 }
 
-# 257
+# 231
 void ms_time(uint16_t ms)
 {
-
 for(uint16_t tms=0; tms < ms/10; tms++)
 {
 for(uint16_t sms=0; sms < ((8000000/4)/1000); sms++);
@@ -5957,7 +5957,7 @@ for(uint16_t sms=0; sms < ((8000000/4)/1000); sms++);
 }
 }
 
-# 274
+# 248
 void us_time(uint16_t us)
 {
 for(uint16_t tus=0; tus < us/10; tus++)
@@ -5965,3 +5965,4 @@ for(uint16_t tus=0; tus < us/10; tus++)
 for(uint16_t sus=0; sus < (8000000>>2)/1000000; sus++);
 }
 }
+
