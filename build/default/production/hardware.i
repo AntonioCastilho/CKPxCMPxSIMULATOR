@@ -5813,14 +5813,16 @@ void pwm2_setPeriod(uint8_t period);
 
 # 20 "hardware.c"
 void pic_ini(void)
+
 {
 
-# 24
+# 25
 INTCONbits.GIE = 1;
 INTCONbits.PEIE_GIEL = 1;
 
 # 30
-lcd_ini(); lcd_com(0x0C);
+lcd_ini();
+lcd_com(0x0C);
 adc_ini();
 timer0_ini();
 timer1_ini();
@@ -5836,6 +5838,7 @@ LATB = 0xFF;
 
 
 void timer0_ini(void)
+
 {
 T0CON = 0x90;
 T0CONbits.TMR0ON = 1;
@@ -5847,6 +5850,7 @@ timer0_write(0xFE0C);
 
 
 void timer0_write( uint16_t timer_value)
+
 {
 TMR0L = (timer_value & 0x00FF);
 TMR0H = (timer_value >> 8) & 0x00FF;
@@ -5855,6 +5859,7 @@ TMR0H = (timer_value >> 8) & 0x00FF;
 
 
 void timer1_ini(void)
+
 {
 T1CON = 0xB1;
 TMR1L = 0;
@@ -5869,13 +5874,16 @@ timer1_write(0xCF2C);
 
 
 void timer1_write(uint16_t timer_value)
+
 {
 TMR1L = (timer_value & 0x00FF);
 TMR1H = (timer_value >> 8) & 0x00FF;
 }
 
-# 92
+
+
 void timer2_ini(void)
+
 {
 T2CON = 0x07;
 PIE1bits.TMR2IE = 1;
@@ -5887,6 +5895,7 @@ TMR2 = 0;
 
 
 void adc_ini(void)
+
 {
 
 TRISA = 0x0F;
@@ -5900,6 +5909,7 @@ ADRESL=0;
 
 
 uint16_t adc_read(uint8_t ch)
+
 {
 uint16_t value;
 ADCON0bits.CHS = ch;
@@ -5912,6 +5922,7 @@ return value;
 
 
 void pwm1_ini(void)
+
 {
 
 TRISCbits.RC2 = 0;
@@ -5940,7 +5951,7 @@ CCP1CONbits.DC1B0 = cycle;
 CCP1CONbits.DC1B1 = cycle >> 1;
 CCPR1L = cycle >> 2;
 
-# 160
+# 165
 TRISBbits.TRISB0 = 0;
 LATBbits.LATB0 = 1;
 
@@ -5951,17 +5962,18 @@ ECCP1AS = 0b11010000;
 
 
 void pwm2_ini(void)
+
 {
 
 TRISCbits.RC1 = 0;
 
-# 179
+# 185
 CCP2CON = 0X0F;
 
 
 uint8_t pr_var = PR2;
 
-# 190
+# 196
 uint16_t cycle2 =
 (uint16_t)(round(((((float)500)/1000.0)*4.0*(
 (float)(pr_var)+1.0))));
@@ -5972,7 +5984,9 @@ CCPR2L = cycle2 >> 2;
 
 }
 
+
 void pwm1_setDutyPot(uint16_t ccpr1_aux)
+
 {
 CCP1CONbits.DC1B0 = ccpr1_aux;
 CCP1CONbits.DC1B1 = ccpr1_aux >> 1;
@@ -5981,9 +5995,8 @@ CCPR1L = ccpr1_aux >> 2;
 }
 
 
-
-
 void pwm2_setDutyPot(uint16_t ccpr2_aux)
+
 {
 CCP2CONbits.DC2B0 = ccpr2_aux;
 CCP2CONbits.DC2B1 = ccpr2_aux >> 1;
@@ -5992,11 +6005,11 @@ CCPR2L = ccpr2_aux >> 2;
 }
 
 
-
-
 void pwm1_setPeriod(uint8_t period)
+
 {
 T2CON = 0x04;
 PR2 = period;
 
 }
+

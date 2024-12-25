@@ -2,6 +2,12 @@
  * File:   main.c
  * Author: Automotive Technologist Antonio Castilho
  * 
+ * It is a system to simulate a crankshaft rotation and position sensor [CKP], 
+ * used in internal combustion engines and the camshaft position sensor [CMP].
+ * It also has a lambda probe simulator.
+ * It will be used in the development of a simulator for repairs of automotive
+ * electronic control units.
+ * 
  * Program environment: MPLAB X IDE v6.20, XC8 v2.50, C std C90, PIC18F455
  * Reference: Microchip PIC18F4550 Datasheet.
  * 
@@ -12,12 +18,18 @@
  * Created on 4 de Dezembro de 2024, 21:43
  */
 
+/*******************************************************************************
+ * Includes
+ ******************************************************************************/
 #include <xc.h>
 #include <math.h>
 #include <stdint.h>
 #include <stdio.h>
 #include "main.h"
 
+/*******************************************************************************
+ * Global variables 
+ ******************************************************************************/
 uint8_t interrupt_timer0 = 0;  // Timebase auxiliary control.
 uint8_t rpm_ckp = 0;           // Control of the pulse that the phonic wheel would generate.
 uint8_t rpm_cmp = 0;           // CMP sensor position control.
@@ -25,7 +37,6 @@ uint8_t turn_ctrl;             // Engine cycle control.
 uint8_t count = 0;             // Control a sampling rate index for sinusoid simulation based on PWM2 duty cycle.
 
 // senoid period
-
 uint16_t sinewave[] = // 41 samples
     {
      0,22,49,86,132,185,246,311,380,415,450,
@@ -34,10 +45,9 @@ uint16_t sinewave[] = // 41 samples
      415,380,311,246,185,132,86,49,22,0 
     };
 
-/*******************************************************************************
- * function: interrupt
- ******************************************************************************/
-void __interrupt() ISR()
+/******************************************************************************/
+void __interrupt() ISR()    // Interrupt function
+/******************************************************************************/
 {
     /***********************************************************
      * TIMER 0 Interrupt | 1 ms
@@ -116,25 +126,22 @@ void __interrupt() ISR()
     
 } // end of "void __interrupt() ISR()" 
 
-/*******************************************************************************
- * main function
- ******************************************************************************/
-void main()
+/******************************************************************************/
+void main()     //  main function
+/******************************************************************************/
 {
     pic_ini();
     
     while(1)  
     {
-        LATBbits.LATB3 = 1;
-        __delay_ms(100); // Spending time checking the continuity of peripheral operation
-        LATBbits.LATB3 = 0;
+        LATBbits.LATB3 = 1;  // On this pin you can check the execution of this part of the program.
+        __delay_ms(1000);    // I want the MCU to spend time here, to check and
+        LATBbits.LATB3 = 0;  // ensure that the peripherals are still operating.
         __delay_ms(100);
-        NOP();
+        NOP();               // nothing
         
     } // end of "while"
     
-} // end of "main function
+} // end of main function
 
-/*******************************************************************************
- * 
- ******************************************************************************/
+/******************************************************************************/

@@ -3757,38 +3757,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.h: 37: typedef signed short int16_t;
 [; ;main.h: 38: typedef unsigned long uint32_t;
 [; ;main.h: 39: typedef signed long int32_t;
-"21 main.c
+"33 main.c
 [v _interrupt_timer0 `uc ~T0 @X0 1 e ]
 [i _interrupt_timer0
 -> -> 0 `i `uc
 ]
-[; ;main.c: 21: uint8_t interrupt_timer0 = 0;
-"22
+[; ;main.c: 33: uint8_t interrupt_timer0 = 0;
+"34
 [v _rpm_ckp `uc ~T0 @X0 1 e ]
 [i _rpm_ckp
 -> -> 0 `i `uc
 ]
-[; ;main.c: 22: uint8_t rpm_ckp = 0;
-"23
+[; ;main.c: 34: uint8_t rpm_ckp = 0;
+"35
 [v _rpm_cmp `uc ~T0 @X0 1 e ]
 [i _rpm_cmp
 -> -> 0 `i `uc
 ]
-[; ;main.c: 23: uint8_t rpm_cmp = 0;
-"24
+[; ;main.c: 35: uint8_t rpm_cmp = 0;
+"36
 [v _turn_ctrl `uc ~T0 @X0 1 e ]
-[; ;main.c: 24: uint8_t turn_ctrl;
-"25
+[; ;main.c: 36: uint8_t turn_ctrl;
+"37
 [v _count `uc ~T0 @X0 1 e ]
 [i _count
 -> -> 0 `i `uc
 ]
-[; ;main.c: 25: uint8_t count = 0;
-"29
+[; ;main.c: 37: uint8_t count = 0;
+"40
 [v _sinewave `ui ~T0 @X0 -> 0 `x e ]
 [i _sinewave
 :U ..
-"31
+"42
 -> -> 0 `i `ui
 -> -> 22 `i `ui
 -> -> 49 `i `ui
@@ -3800,7 +3800,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 380 `i `ui
 -> -> 415 `i `ui
 -> -> 450 `i `ui
-"32
+"43
 -> -> 415 `i `ui
 -> -> 380 `i `ui
 -> -> 311 `i `ui
@@ -3812,7 +3812,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 22 `i `ui
 -> -> 0 `i `ui
 -> -> 22 `i `ui
-"33
+"44
 -> -> 49 `i `ui
 -> -> 86 `i `ui
 -> -> 132 `i `ui
@@ -3822,7 +3822,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 380 `i `ui
 -> -> 415 `i `ui
 -> -> 450 `i `ui
-"34
+"45
 -> -> 415 `i `ui
 -> -> 380 `i `ui
 -> -> 311 `i `ui
@@ -3832,235 +3832,235 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 86 `i `ui
 -> -> 49 `i `ui
 -> -> 22 `i `ui
-"35
+"46
 -> -> 0 `i `ui
 ..
 ]
-[; ;main.c: 29: uint16_t sinewave[] =
-[; ;main.c: 30: {
-[; ;main.c: 31: 0,22,49,86,132,185,246,311,380,415,450,
-[; ;main.c: 32: 415,380,311,246,185,132,86,49,22,0,22,
-[; ;main.c: 33: 49,86,132,185,246,311,380,415,450,
-[; ;main.c: 34: 415,380,311,246,185,132,86,49,22,0
-[; ;main.c: 35: };
-[v $root$_ISR `(v ~T0 @X0 0 e ]
-"40
-[v _ISR `(v ~T58 @X0 1 ef ]
-"41
-{
-[; ;main.c: 40: void __interrupt() ISR()
+[; ;main.c: 40: uint16_t sinewave[] =
 [; ;main.c: 41: {
+[; ;main.c: 42: 0,22,49,86,132,185,246,311,380,415,450,
+[; ;main.c: 43: 415,380,311,246,185,132,86,49,22,0,22,
+[; ;main.c: 44: 49,86,132,185,246,311,380,415,450,
+[; ;main.c: 45: 415,380,311,246,185,132,86,49,22,0
+[; ;main.c: 46: };
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"49
+[v _ISR `(v ~T58 @X0 1 ef ]
+"51
+{
+[; ;main.c: 49: void __interrupt() ISR()
+[; ;main.c: 51: {
 [e :U _ISR ]
 [f ]
-[; ;main.c: 46: if(INTCONbits.TMR0IF)
-"46
+[; ;main.c: 56: if(INTCONbits.TMR0IF)
+"56
 [e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 368  ]
-[; ;main.c: 47: {
-"47
+[; ;main.c: 57: {
+"57
 {
-[; ;main.c: 48: INTCONbits.TMR0IF = 0;
-"48
+[; ;main.c: 58: INTCONbits.TMR0IF = 0;
+"58
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 49: timer0_write(0xFE0C);
-"49
+[; ;main.c: 59: timer0_write(0xFE0C);
+"59
 [e ( _timer0_write (1 -> 65036 `ui ]
-[; ;main.c: 50: LATBbits.LATB7 = ~LATBbits.LATB7;
-"50
+[; ;main.c: 60: LATBbits.LATB7 = ~LATBbits.LATB7;
+"60
 [e = . . _LATBbits 0 7 -> ~ -> . . _LATBbits 0 7 `i `uc ]
-"52
+"62
 }
 [e :U 368 ]
-[; ;main.c: 52: }
-[; ;main.c: 58: if(TMR1IF)
-"58
+[; ;main.c: 62: }
+[; ;main.c: 68: if(TMR1IF)
+"68
 [e $ ! _TMR1IF 369  ]
-[; ;main.c: 59: {
-"59
-{
-[; ;main.c: 63: TMR1IF = 0;
-"63
-[e = _TMR1IF -> -> 0 `i `b ]
-[; ;main.c: 64: timer1_write(0xCF2C);
-"64
-[e ( _timer1_write (1 -> 53036 `ui ]
-[; ;main.c: 66: LATBbits.LATB5 = ~PORTBbits.RB5;
-"66
-[e = . . _LATBbits 0 5 -> ~ -> . . _PORTBbits 0 5 `i `uc ]
-[; ;main.c: 67: pwm2_setDutyPot((float)(sinewave[count])*1.15);
-"67
-[e ( _pwm2_setDutyPot (1 -> * -> -> *U + &U _sinewave * -> _count `ux -> -> # *U &U _sinewave `ui `ux `f `d .1.15 `ui ]
-[; ;main.c: 69: count++;
+[; ;main.c: 69: {
 "69
+{
+[; ;main.c: 73: TMR1IF = 0;
+"73
+[e = _TMR1IF -> -> 0 `i `b ]
+[; ;main.c: 74: timer1_write(0xCF2C);
+"74
+[e ( _timer1_write (1 -> 53036 `ui ]
+[; ;main.c: 76: LATBbits.LATB5 = ~PORTBbits.RB5;
+"76
+[e = . . _LATBbits 0 5 -> ~ -> . . _PORTBbits 0 5 `i `uc ]
+[; ;main.c: 77: pwm2_setDutyPot((float)(sinewave[count])*1.15);
+"77
+[e ( _pwm2_setDutyPot (1 -> * -> -> *U + &U _sinewave * -> _count `ux -> -> # *U &U _sinewave `ui `ux `f `d .1.15 `ui ]
+[; ;main.c: 79: count++;
+"79
 [e ++ _count -> -> 1 `i `uc ]
-[; ;main.c: 70: if(count > 41) count = 0;
-"70
+[; ;main.c: 80: if(count > 41) count = 0;
+"80
 [e $ ! > -> _count `i -> 41 `i 370  ]
 [e = _count -> -> 0 `i `uc ]
 [e :U 370 ]
-"72
+"82
 }
 [e :U 369 ]
-[; ;main.c: 72: }
-[; ;main.c: 78: if(PIR1bits.TMR2IF)
-"78
-[e $ ! != -> . . _PIR1bits 0 1 `i -> -> -> 0 `i `Vuc `i 371  ]
-[; ;main.c: 79: {
-"79
-{
-[; ;main.c: 80: LATBbits.LATB6 = ~PORTBbits.RB6;
-"80
-[e = . . _LATBbits 0 6 -> ~ -> . . _PORTBbits 0 6 `i `uc ]
-[; ;main.c: 81: rpm_ckp++;
-"81
-[e ++ _rpm_ckp -> -> 1 `i `uc ]
-[; ;main.c: 82: PIR1bits.TMR2IF = 0;
-"82
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 84: if(rpm_ckp == 59)
-"84
-[e $ ! == -> _rpm_ckp `i -> 59 `i 372  ]
-[; ;main.c: 85: {
-"85
-{
-[; ;main.c: 86: LATBbits.LATB0 = 0;
-"86
-[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 87: turn_ctrl++;
-"87
-[e ++ _turn_ctrl -> -> 1 `i `uc ]
-[; ;main.c: 88: LATCbits.LATC2 = 0;
+[; ;main.c: 82: }
+[; ;main.c: 88: if(PIR1bits.TMR2IF)
 "88
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+[e $ ! != -> . . _PIR1bits 0 1 `i -> -> -> 0 `i `Vuc `i 371  ]
+[; ;main.c: 89: {
 "89
-}
-[e :U 372 ]
-[; ;main.c: 89: }
-[; ;main.c: 91: if(rpm_ckp == 60)
+{
+[; ;main.c: 90: LATBbits.LATB6 = ~PORTBbits.RB6;
+"90
+[e = . . _LATBbits 0 6 -> ~ -> . . _PORTBbits 0 6 `i `uc ]
+[; ;main.c: 91: rpm_ckp++;
 "91
-[e $ ! == -> _rpm_ckp `i -> 60 `i 373  ]
-[; ;main.c: 92: {
+[e ++ _rpm_ckp -> -> 1 `i `uc ]
+[; ;main.c: 92: PIR1bits.TMR2IF = 0;
 "92
-{
-[; ;main.c: 93: rpm_ckp = 0;
-"93
-[e = _rpm_ckp -> -> 0 `i `uc ]
-[; ;main.c: 94: LATBbits.LATB0 = 1;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 94: if(rpm_ckp == 59)
 "94
-[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 96: if(turn_ctrl == 2)
-"96
-[e $ ! == -> _turn_ctrl `i -> 2 `i 374  ]
-[; ;main.c: 97: {
-"97
+[e $ ! == -> _rpm_ckp `i -> 59 `i 372  ]
+[; ;main.c: 95: {
+"95
 {
-[; ;main.c: 98: turn_ctrl = 0;
+[; ;main.c: 96: LATBbits.LATB0 = 0;
+"96
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 97: turn_ctrl++;
+"97
+[e ++ _turn_ctrl -> -> 1 `i `uc ]
+[; ;main.c: 98: LATCbits.LATC2 = 0;
 "98
-[e = _turn_ctrl -> -> 0 `i `uc ]
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 "99
 }
+[e :U 372 ]
+[; ;main.c: 99: }
+[; ;main.c: 101: if(rpm_ckp == 60)
+"101
+[e $ ! == -> _rpm_ckp `i -> 60 `i 373  ]
+[; ;main.c: 102: {
+"102
+{
+[; ;main.c: 103: rpm_ckp = 0;
+"103
+[e = _rpm_ckp -> -> 0 `i `uc ]
+[; ;main.c: 104: LATBbits.LATB0 = 1;
+"104
+[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 106: if(turn_ctrl == 2)
+"106
+[e $ ! == -> _turn_ctrl `i -> 2 `i 374  ]
+[; ;main.c: 107: {
+"107
+{
+[; ;main.c: 108: turn_ctrl = 0;
+"108
+[e = _turn_ctrl -> -> 0 `i `uc ]
+"109
+}
 [e :U 374 ]
-"100
+"110
 }
 [e :U 373 ]
-[; ;main.c: 99: }
-[; ;main.c: 100: }
-[; ;main.c: 104: if(rpm_cmp == 21) LATBbits.LATB4 = 0;
-"104
+[; ;main.c: 109: }
+[; ;main.c: 110: }
+[; ;main.c: 114: if(rpm_cmp == 21) LATBbits.LATB4 = 0;
+"114
 [e $ ! == -> _rpm_cmp `i -> 21 `i 375  ]
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
 [e :U 375 ]
-[; ;main.c: 105: if(rpm_cmp == 45) LATBbits.LATB4 = 1;
-"105
+[; ;main.c: 115: if(rpm_cmp == 45) LATBbits.LATB4 = 1;
+"115
 [e $ ! == -> _rpm_cmp `i -> 45 `i 376  ]
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
 [e :U 376 ]
-[; ;main.c: 106: if(rpm_cmp == 51) LATBbits.LATB4 = 0;
-"106
+[; ;main.c: 116: if(rpm_cmp == 51) LATBbits.LATB4 = 0;
+"116
 [e $ ! == -> _rpm_cmp `i -> 51 `i 377  ]
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
 [e :U 377 ]
-[; ;main.c: 107: if(rpm_cmp == 74) LATBbits.LATB4 = 1;
-"107
+[; ;main.c: 117: if(rpm_cmp == 74) LATBbits.LATB4 = 1;
+"117
 [e $ ! == -> _rpm_cmp `i -> 74 `i 378  ]
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
 [e :U 378 ]
-[; ;main.c: 108: if(rpm_cmp == 81) LATBbits.LATB4 = 0;
-"108
+[; ;main.c: 118: if(rpm_cmp == 81) LATBbits.LATB4 = 0;
+"118
 [e $ ! == -> _rpm_cmp `i -> 81 `i 379  ]
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
 [e :U 379 ]
-[; ;main.c: 109: if(rpm_cmp == 88) LATBbits.LATB4 = 1;
-"109
+[; ;main.c: 119: if(rpm_cmp == 88) LATBbits.LATB4 = 1;
+"119
 [e $ ! == -> _rpm_cmp `i -> 88 `i 380  ]
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
 [e :U 380 ]
-[; ;main.c: 110: if(rpm_cmp == 111) LATBbits.LATB4 = 0;
-"110
+[; ;main.c: 120: if(rpm_cmp == 111) LATBbits.LATB4 = 0;
+"120
 [e $ ! == -> _rpm_cmp `i -> 111 `i 381  ]
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
 [e :U 381 ]
-[; ;main.c: 111: if(rpm_cmp == 118) LATBbits.LATB4 = 1;
-"111
+[; ;main.c: 121: if(rpm_cmp == 118) LATBbits.LATB4 = 1;
+"121
 [e $ ! == -> _rpm_cmp `i -> 118 `i 382  ]
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
 [e :U 382 ]
-[; ;main.c: 112: rpm_cmp++;
-"112
+[; ;main.c: 122: rpm_cmp++;
+"122
 [e ++ _rpm_cmp -> -> 1 `i `uc ]
-[; ;main.c: 113: if(rpm_cmp > 119) rpm_cmp = 0;
-"113
+[; ;main.c: 123: if(rpm_cmp > 119) rpm_cmp = 0;
+"123
 [e $ ! > -> _rpm_cmp `i -> 119 `i 383  ]
 [e = _rpm_cmp -> -> 0 `i `uc ]
 [e :U 383 ]
-"115
+"125
 }
 [e :U 371 ]
-[; ;main.c: 115: }
-[; ;main.c: 117: }
-"117
+[; ;main.c: 125: }
+[; ;main.c: 127: }
+"127
 [e :UE 367 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"122
+"130
 [v _main `(v ~T0 @X0 1 ef ]
-"123
+"132
 {
-[; ;main.c: 122: void main()
-[; ;main.c: 123: {
+[; ;main.c: 130: void main()
+[; ;main.c: 132: {
 [e :U _main ]
 [f ]
-[; ;main.c: 124: pic_ini();
-"124
+[; ;main.c: 133: pic_ini();
+"133
 [e ( _pic_ini ..  ]
-[; ;main.c: 126: while(1)
-"126
+[; ;main.c: 135: while(1)
+"135
 [e :U 386 ]
-[; ;main.c: 127: {
-"127
+[; ;main.c: 136: {
+"136
 {
-[; ;main.c: 128: LATBbits.LATB3 = 1;
-"128
+[; ;main.c: 137: LATBbits.LATB3 = 1;
+"137
 [e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 129: _delay((unsigned long)((100)*(8000000/4000.0)));
-"129
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 130: LATBbits.LATB3 = 0;
-"130
+[; ;main.c: 138: _delay((unsigned long)((1000)*(8000000/4000.0)));
+"138
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 139: LATBbits.LATB3 = 0;
+"139
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 131: _delay((unsigned long)((100)*(8000000/4000.0)));
-"131
+[; ;main.c: 140: _delay((unsigned long)((100)*(8000000/4000.0)));
+"140
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;main.c: 132: __nop();
-"132
+[; ;main.c: 141: __nop();
+"141
 [e ( ___nop ..  ]
-"134
+"143
 }
 [e :U 385 ]
-"126
+"135
 [e $U 386  ]
 [e :U 387 ]
-[; ;main.c: 134: }
-[; ;main.c: 136: }
-"136
+[; ;main.c: 143: }
+[; ;main.c: 145: }
+"145
 [e :UE 384 ]
 }

@@ -28,21 +28,22 @@
 /*******************************************************************************
  * Function declaration
  ******************************************************************************/
-void pic_ini(void);
-void timer0_ini(void);
-void timer1_ini(void);
-void timer1_write(uint16_t timer_value);
-void timer2_ini(void);
-void timer0_write(uint16_t timer_value);
-void timer2_write( uint8_t timer_value);
-void adc_ini(void);
+void     pic_ini(void);
+void     timer0_ini(void);
+void     timer1_ini(void);
+void     timer1_write(uint16_t timer_value);
+void     timer2_ini(void);
+void     timer0_write(uint16_t timer_value);
+void     timer2_write( uint8_t timer_value);
+void     adc_ini(void);
+void     pwm1_ini(void);
+void     pwm2_ini(void);
+void     pwm1_setDutyPot(uint16_t ccpr1_aux);
+void     pwm2_setDutyPot(uint16_t ccpr2_aux);
+void     pwm1_setPeriod(uint8_t period);
+void     pwm2_setPeriod(uint8_t period);
 uint16_t adc_read(uint8_t ch);
-void pwm1_ini(void);
-void pwm2_ini(void);
-void pwm1_setDutyPot(uint16_t ccpr1_aux);
-void pwm2_setDutyPot(uint16_t ccpr2_aux);
-void pwm1_setPeriod(uint8_t period);
-void pwm2_setPeriod(uint8_t period);
+/******************************************************************************/
 
 #ifdef	__cplusplus
 extern "C" {

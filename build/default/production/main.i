@@ -5871,13 +5871,12 @@ typedef signed short int16_t;
 typedef unsigned long uint32_t;
 typedef signed long int32_t;
 
-# 21 "main.c"
+# 33 "main.c"
 uint8_t interrupt_timer0 = 0;
 uint8_t rpm_ckp = 0;
 uint8_t rpm_cmp = 0;
 uint8_t turn_ctrl;
 uint8_t count = 0;
-
 
 
 uint16_t sinewave[] =
@@ -5888,11 +5887,12 @@ uint16_t sinewave[] =
 415,380,311,246,185,132,86,49,22,0
 };
 
-# 40
+
 void __interrupt() ISR()
+
 {
 
-# 46
+# 56
 if(INTCONbits.TMR0IF)
 {
 INTCONbits.TMR0IF = 0;
@@ -5901,7 +5901,7 @@ LATBbits.LATB7 = ~LATBbits.LATB7;
 
 }
 
-# 58
+# 68
 if(TMR1IF)
 {
 
@@ -5918,7 +5918,7 @@ if(count > 41) count = 0;
 
 }
 
-# 78
+# 88
 if(PIR1bits.TMR2IF)
 {
 LATBbits.LATB6 = ~PORTBbits.RB6;
@@ -5960,15 +5960,16 @@ if(rpm_cmp > 119) rpm_cmp = 0;
 
 }
 
-# 122
+
 void main()
+
 {
 pic_ini();
 
 while(1)
 {
 LATBbits.LATB3 = 1;
-_delay((unsigned long)((100)*(8000000/4000.0)));
+_delay((unsigned long)((1000)*(8000000/4000.0)));
 LATBbits.LATB3 = 0;
 _delay((unsigned long)((100)*(8000000/4000.0)));
 __nop();
