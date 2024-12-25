@@ -5783,7 +5783,7 @@ uint8_t digit_counter(uint16_t number);
 void ms_time(uint16_t ms);
 void us_time(uint16_t us);
 
-# 22 "hardware.h"
+# 31 "hardware.h"
 void pic_ini(void);
 void timer0_ini(void);
 void timer1_ini(void);
@@ -5800,10 +5800,10 @@ void pwm2_setDutyPot(uint16_t ccpr2_aux);
 void pwm1_setPeriod(uint8_t period);
 void pwm2_setPeriod(uint8_t period);
 
-# 17 "main.h"
+# 22 "main.h"
 void cmp_sensor(void);
 
-# 29
+# 34
 typedef unsigned char uint8_t;
 typedef signed char int8_t;
 typedef unsigned short uint16_t;
@@ -5942,12 +5942,11 @@ while(number >= 10)
 {
 number = number / 10;
 n++;
-
 }
 return n;
 }
 
-# 231
+# 230
 void ms_time(uint16_t ms)
 {
 for(uint16_t tms=0; tms < ms/10; tms++)
@@ -5957,7 +5956,7 @@ for(uint16_t sms=0; sms < ((8000000/4)/1000); sms++);
 }
 }
 
-# 248
+# 247
 void us_time(uint16_t us)
 {
 for(uint16_t tus=0; tus < us/10; tus++)

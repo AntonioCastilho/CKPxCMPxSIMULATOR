@@ -48,27 +48,27 @@
 "10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
-"13 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+"20 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
 [v _pic_ini pic_ini `(v  1 e 1 0 ]
-"41
+"48
 [v _timer0_ini timer0_ini `(v  1 e 1 0 ]
-"52
+"59
 [v _timer0_write timer0_write `(v  1 e 1 0 ]
 [v i2_timer0_write timer0_write `(v  1 e 1 0 ]
-"60
+"67
 [v _timer1_ini timer1_ini `(v  1 e 1 0 ]
-"74
+"81
 [v _timer1_write timer1_write `(v  1 e 1 0 ]
 [v i2_timer1_write timer1_write `(v  1 e 1 0 ]
-"85
+"92
 [v _timer2_ini timer2_ini `(v  1 e 1 0 ]
-"96
+"103
 [v _adc_ini adc_ini `(v  1 e 1 0 ]
-"121
+"128
 [v _pwm1_ini pwm1_ini `(v  1 e 1 0 ]
-"162
+"169
 [v _pwm2_ini pwm2_ini `(v  1 e 1 0 ]
-"204
+"211
 [v _pwm2_setDutyPot pwm2_setDutyPot `(v  1 e 1 0 ]
 "41 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\lcd.c
 [v _lcd_com lcd_com `(v  1 e 1 0 ]
@@ -78,13 +78,13 @@
 [v _lcd_prtChar lcd_prtChar `(v  1 e 1 0 ]
 "153
 [v _lcd_prtStr lcd_prtStr `(v  1 e 1 0 ]
-"231
+"230
 [v _ms_time ms_time `(v  1 e 1 0 ]
-"248
+"247
 [v _us_time us_time `(v  1 e 1 0 ]
-"35 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+"40 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"117
+"122
 [v _main main `(v  1 e 1 0 ]
 [s S124 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
@@ -111,7 +111,7 @@
 [v _PORTBbits PORTBbits `VES144  1 e 1 @3969 ]
 "2705
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
-[s S873 . 1 `uc 1 RD0 1 0 :1:0 
+[s S871 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -121,7 +121,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "2736
-[s S882 . 1 `uc 1 SPP0 1 0 :1:0 
+[s S880 . 1 `uc 1 SPP0 1 0 :1:0 
 `uc 1 SPP1 1 0 :1:1 
 `uc 1 SPP2 1 0 :1:2 
 `uc 1 SPP3 1 0 :1:3 
@@ -130,11 +130,11 @@
 `uc 1 SPP6 1 0 :1:6 
 `uc 1 SPP7 1 0 :1:7 
 ]
-[s S891 . 1 `uc 1 . 1 0 :7:0 
+[s S889 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S894 . 1 `S873 1 . 1 0 `S882 1 . 1 0 `S891 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES894  1 e 1 @3971 ]
+[u S892 . 1 `S871 1 . 1 0 `S880 1 . 1 0 `S889 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES892  1 e 1 @3971 ]
 "3073
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
 [s S78 . 1 `uc 1 LATB0 1 0 :1:0 
@@ -179,7 +179,7 @@
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "3625
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
-[s S681 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S679 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -189,9 +189,9 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "3657
-[u S699 . 1 `S681 1 . 1 0 `S124 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES699  1 e 1 @3987 ]
-[s S569 . 1 `uc 1 TRISC0 1 0 :1:0 
+[u S697 . 1 `S679 1 . 1 0 `S124 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES697  1 e 1 @3987 ]
+[s S567 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -199,18 +199,18 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "3875
-[s S576 . 1 `uc 1 RC0 1 0 :1:0 
+[s S574 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S583 . 1 `S569 1 . 1 0 `S576 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES583  1 e 1 @3988 ]
+[u S581 . 1 `S567 1 . 1 0 `S574 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES581  1 e 1 @3988 ]
 "4001
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S405 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S403 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -220,14 +220,14 @@
 `uc 1 SPPIE 1 0 :1:7 
 ]
 "4408
-[s S414 . 1 `uc 1 . 1 0 :4:0 
+[s S412 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PSPIE 1 0 :1:7 
 ]
-[u S420 . 1 `S405 1 . 1 0 `S414 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES420  1 e 1 @3997 ]
+[u S418 . 1 `S403 1 . 1 0 `S412 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES418  1 e 1 @3997 ]
 [s S174 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -246,7 +246,7 @@
 ]
 [u S189 . 1 `S174 1 . 1 0 `S183 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES189  1 e 1 @3998 ]
-[s S461 . 1 `uc 1 TMR1IP 1 0 :1:0 
+[s S459 . 1 `uc 1 TMR1IP 1 0 :1:0 
 `uc 1 TMR2IP 1 0 :1:1 
 `uc 1 CCP1IP 1 0 :1:2 
 `uc 1 SSPIP 1 0 :1:3 
@@ -256,43 +256,43 @@
 `uc 1 SPPIP 1 0 :1:7 
 ]
 "4576
-[s S470 . 1 `uc 1 . 1 0 :4:0 
+[s S468 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IP 1 0 :1:4 
 `uc 1 RC1IP 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PSPIP 1 0 :1:7 
 ]
-[u S476 . 1 `S461 1 . 1 0 `S470 1 . 1 0 ]
-[v _IPR1bits IPR1bits `VES476  1 e 1 @3999 ]
+[u S474 . 1 `S459 1 . 1 0 `S468 1 . 1 0 ]
+[v _IPR1bits IPR1bits `VES474  1 e 1 @3999 ]
 "5762
 [v _ECCP1AS ECCP1AS `VEuc  1 e 1 @4022 ]
 "5924
 [v _ECCP1DEL ECCP1DEL `VEuc  1 e 1 @4023 ]
 "6242
 [v _CCP2CON CCP2CON `VEuc  1 e 1 @4026 ]
-[s S746 . 1 `uc 1 CCP2M 1 0 :4:0 
+[s S744 . 1 `uc 1 CCP2M 1 0 :4:0 
 `uc 1 DC2B 1 0 :2:4 
 ]
 "6261
-[s S749 . 1 `uc 1 CCP2M0 1 0 :1:0 
+[s S747 . 1 `uc 1 CCP2M0 1 0 :1:0 
 `uc 1 CCP2M1 1 0 :1:1 
 `uc 1 CCP2M2 1 0 :1:2 
 `uc 1 CCP2M3 1 0 :1:3 
 `uc 1 DC2B0 1 0 :1:4 
 `uc 1 DC2B1 1 0 :1:5 
 ]
-[u S756 . 1 `S746 1 . 1 0 `S749 1 . 1 0 ]
-[v _CCP2CONbits CCP2CONbits `VES756  1 e 1 @4026 ]
+[u S754 . 1 `S744 1 . 1 0 `S747 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES754  1 e 1 @4026 ]
 "6313
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @4027 ]
 "6327
 [v _CCP1CON CCP1CON `VEuc  1 e 1 @4029 ]
-[s S650 . 1 `uc 1 CCP1M 1 0 :4:0 
+[s S648 . 1 `uc 1 CCP1M 1 0 :4:0 
 `uc 1 DC1B 1 0 :2:4 
 `uc 1 P1M 1 0 :2:6 
 ]
 "6354
-[s S654 . 1 `uc 1 CCP1M0 1 0 :1:0 
+[s S652 . 1 `uc 1 CCP1M0 1 0 :1:0 
 `uc 1 CCP1M1 1 0 :1:1 
 `uc 1 CCP1M2 1 0 :1:2 
 `uc 1 CCP1M3 1 0 :1:3 
@@ -301,58 +301,58 @@
 `uc 1 P1M0 1 0 :1:6 
 `uc 1 P1M1 1 0 :1:7 
 ]
-[u S663 . 1 `S650 1 . 1 0 `S654 1 . 1 0 ]
-[v _CCP1CONbits CCP1CONbits `VES663  1 e 1 @4029 ]
+[u S661 . 1 `S648 1 . 1 0 `S652 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES661  1 e 1 @4029 ]
 "6496
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @4030 ]
 "6510
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
 "6581
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
-[s S499 . 1 `uc 1 . 1 0 :1:0 
+[s S497 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "6710
-[s S502 . 1 `uc 1 ADON 1 0 :1:0 
+[s S500 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S506 . 1 `uc 1 . 1 0 :1:0 
+[s S504 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S513 . 1 `uc 1 . 1 0 :1:0 
+[s S511 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S516 . 1 `uc 1 . 1 0 :1:0 
+[s S514 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S519 . 1 `uc 1 . 1 0 :1:0 
+[s S517 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S522 . 1 `uc 1 . 1 0 :1:0 
+[s S520 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S525 . 1 `uc 1 . 1 0 :1:0 
+[s S523 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S528 . 1 `S499 1 . 1 0 `S502 1 . 1 0 `S506 1 . 1 0 `S513 1 . 1 0 `S516 1 . 1 0 `S519 1 . 1 0 `S522 1 . 1 0 `S525 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES528  1 e 1 @4034 ]
+[u S526 . 1 `S497 1 . 1 0 `S500 1 . 1 0 `S504 1 . 1 0 `S511 1 . 1 0 `S514 1 . 1 0 `S517 1 . 1 0 `S520 1 . 1 0 `S523 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES526  1 e 1 @4034 ]
 "6792
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "6799
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
 "7200
 [v _T2CON T2CON `VEuc  1 e 1 @4042 ]
-[s S602 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S600 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 TOUTPS 1 0 :4:3 
 ]
 "7228
-[s S606 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S604 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -360,14 +360,14 @@
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[s S614 . 1 `uc 1 . 1 0 :3:0 
+[s S612 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 TOUTPS0 1 0 :1:3 
 `uc 1 TOUTPS1 1 0 :1:4 
 `uc 1 TOUTPS2 1 0 :1:5 
 `uc 1 TOUTPS3 1 0 :1:6 
 ]
-[u S620 . 1 `S602 1 . 1 0 `S606 1 . 1 0 `S614 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES620  1 e 1 @4042 ]
+[u S618 . 1 `S600 1 . 1 0 `S604 1 . 1 0 `S612 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES618  1 e 1 @4042 ]
 "7298
 [v _PR2 PR2 `VEuc  1 e 1 @4043 ]
 "7408
@@ -382,7 +382,7 @@
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 "8069
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S373 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S371 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -390,12 +390,12 @@
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "8089
-[s S380 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S378 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 ]
-[u S384 . 1 `S373 1 . 1 0 `S380 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES384  1 e 1 @4053 ]
+[u S382 . 1 `S371 1 . 1 0 `S378 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES382  1 e 1 @4053 ]
 "8146
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "8153
@@ -427,70 +427,70 @@
 [v _INTCONbits INTCONbits `VES46  1 e 1 @4082 ]
 "10834
 [v _TMR1IF TMR1IF `VEb  1 e 0 @31984 ]
-"15 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+"22 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
 [v _rpm_ckp rpm_ckp `uc  1 e 1 0 ]
-"16
+"23
 [v _rpm_cmp rpm_cmp `uc  1 e 1 0 ]
-"17
-[v _turn_ctrl turn_ctrl `uc  1 e 1 0 ]
-"19
-[v _count count `uc  1 e 1 0 ]
 "24
+[v _turn_ctrl turn_ctrl `uc  1 e 1 0 ]
+"25
+[v _count count `uc  1 e 1 0 ]
+"29
 [v _sinewave sinewave `[41]ui  1 e 82 0 ]
-"117
+"122
 [v _main main `(v  1 e 1 0 ]
 {
-"131
+"136
 } 0
-"13 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+"20 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
 [v _pic_ini pic_ini `(v  1 e 1 0 ]
 {
-"38
+"45
 } 0
-"85
+"92
 [v _timer2_ini timer2_ini `(v  1 e 1 0 ]
 {
-"93
+"100
 } 0
-"60
+"67
 [v _timer1_ini timer1_ini `(v  1 e 1 0 ]
 {
-"71
+"78
 } 0
-"74
+"81
 [v _timer1_write timer1_write `(v  1 e 1 0 ]
 {
 [v timer1_write@timer_value timer_value `ui  1 p 2 0 ]
-"78
+"85
 } 0
-"41
+"48
 [v _timer0_ini timer0_ini `(v  1 e 1 0 ]
 {
-"49
+"56
 } 0
-"52
+"59
 [v _timer0_write timer0_write `(v  1 e 1 0 ]
 {
 [v timer0_write@timer_value timer_value `ui  1 p 2 0 ]
-"57
+"64
 } 0
-"162
+"169
 [v _pwm2_ini pwm2_ini `(v  1 e 1 0 ]
 {
-"183
+"190
 [v pwm2_ini@cycle2 cycle2 `ui  1 a 2 102 ]
-"175
+"182
 [v pwm2_ini@pr_var pr_var `uc  1 a 1 101 ]
-"191
+"198
 } 0
-"121
+"128
 [v _pwm1_ini pwm1_ini `(v  1 e 1 0 ]
 {
-"142
+"149
 [v pwm1_ini@cycle cycle `ui  1 a 2 106 ]
-"134
+"141
 [v pwm1_ini@pr_var pr_var `uc  1 a 1 105 ]
-"159
+"166
 } 0
 "6 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\round.c
 [v _round round `(d  1 e 4 0 ]
@@ -577,17 +577,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1270 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1268 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1275 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S1278 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1270 1 fAsBytes 4 0 `S1275 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1278  1 a 4 49 ]
+[s S1273 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S1276 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1268 1 fAsBytes 4 0 `S1273 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1276  1 a 4 49 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 43 ]
-[s S1346 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1344 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1349 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1346 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1349  1 a 2 53 ]
+[u S1347 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1344 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1347  1 a 2 53 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 48 ]
 "11
@@ -604,16 +604,16 @@
 {
 "106
 } 0
-"231
+"230
 [v _ms_time ms_time `(v  1 e 1 0 ]
 {
-"235
+"234
 [v ms_time@sms sms `ui  1 a 2 11 ]
-"233
+"232
 [v ms_time@tms tms `ui  1 a 2 9 ]
-"231
+"230
 [v ms_time@ms ms `ui  1 p 2 7 ]
-"238
+"237
 } 0
 "41
 [v _lcd_com lcd_com `(v  1 e 1 0 ]
@@ -624,16 +624,16 @@
 [v lcd_com@cmd cmd `uc  1 p 1 13 ]
 "70
 } 0
-"248
+"247
 [v _us_time us_time `(v  1 e 1 0 ]
 {
-"252
+"251
 [v us_time@sus sus `ui  1 a 2 11 ]
-"250
+"249
 [v us_time@tus tus `ui  1 a 2 9 ]
-"248
+"247
 [v us_time@us us `ui  1 p 2 7 ]
-"254
+"253
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
@@ -647,27 +647,27 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
-"96 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+"103 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
 [v _adc_ini adc_ini `(v  1 e 1 0 ]
 {
-"106
+"113
 } 0
-"35 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
+"40 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"112
+"117
 } 0
-"74 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+"81 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
 [v i2_timer1_write timer1_write `(v  1 e 1 0 ]
 {
 [v i2timer1_write@timer_value timer_value `ui  1 p 2 0 ]
-"78
+"85
 } 0
-"52
+"59
 [v i2_timer0_write timer0_write `(v  1 e 1 0 ]
 {
 [v i2timer0_write@timer_value timer_value `ui  1 p 2 0 ]
-"57
+"64
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\xxtofl.c
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -697,17 +697,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c90\common\sprcmul.c
 [v i2___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1270 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1268 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1275 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S1278 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1270 1 fAsBytes 4 0 `S1275 1 fAsWords 4 0 ]
-[v i2___flmul@prod prod `S1278  1 a 4 33 ]
+[s S1273 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S1276 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1268 1 fAsBytes 4 0 `S1273 1 fAsWords 4 0 ]
+[v i2___flmul@prod prod `S1276  1 a 4 33 ]
 "12
 [v i2___flmul@grs grs `ul  1 a 4 27 ]
-[s S1346 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1344 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1349 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1346 1 nAsBytes 2 0 ]
-[v i2___flmul@temp temp `S1349  1 a 2 37 ]
+[u S1347 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1344 1 nAsBytes 2 0 ]
+[v i2___flmul@temp temp `S1347  1 a 2 37 ]
 "10
 [v i2___flmul@bexp bexp `uc  1 a 1 32 ]
 "11
@@ -719,9 +719,9 @@
 [v i2___flmul@a a `d  1 p 4 18 ]
 "205
 } 0
-"204 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
+"211 C:\Users\casti\MPLABXProjects\sim-rpm-rev00.X\hardware.c
 [v _pwm2_setDutyPot pwm2_setDutyPot `(v  1 e 1 0 ]
 {
 [v pwm2_setDutyPot@ccpr2_aux ccpr2_aux `ui  1 p 2 49 ]
-"210
+"217
 } 0

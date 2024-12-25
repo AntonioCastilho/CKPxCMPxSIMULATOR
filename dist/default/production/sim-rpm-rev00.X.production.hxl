@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\casti\AppData\Local\Temp\xcAs91k.\driver_tmp_3.o
+ C:\Users\casti\AppData\Local\Temp\xcAs7c.\driver_tmp_3.o
  -Odist/default/production\sim-rpm-rev00.X.production.hex
  -logfile=dist/default/production\sim-rpm-rev00.X.production.hxl
  -addressing=1
@@ -9,9 +9,9 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\casti\AppData\Local\Temp\xcAs91k.\driver_tmp_3.o)
-  8h - 11h		(C:\Users\casti\AppData\Local\Temp\xcAs91k.\driver_tmp_3.o)
-  800h - 260Dh		(C:\Users\casti\AppData\Local\Temp\xcAs91k.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\casti\AppData\Local\Temp\xcAs7c.\driver_tmp_3.o)
+  8h - 11h		(C:\Users\casti\AppData\Local\Temp\xcAs7c.\driver_tmp_3.o)
+  800h - 260Dh		(C:\Users\casti\AppData\Local\Temp\xcAs7c.\driver_tmp_3.o)
  Unused ranges:
   4h - 7h
   12h - 7FFh
@@ -19,7 +19,7 @@
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\casti\AppData\Local\Temp\xcAs91k.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\casti\AppData\Local\Temp\xcAs7c.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------

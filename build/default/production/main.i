@@ -5843,7 +5843,7 @@ uint8_t digit_counter(uint16_t number);
 void ms_time(uint16_t ms);
 void us_time(uint16_t us);
 
-# 22 "hardware.h"
+# 31 "hardware.h"
 void pic_ini(void);
 void timer0_ini(void);
 void timer1_ini(void);
@@ -5860,10 +5860,10 @@ void pwm2_setDutyPot(uint16_t ccpr2_aux);
 void pwm1_setPeriod(uint8_t period);
 void pwm2_setPeriod(uint8_t period);
 
-# 17 "main.h"
+# 22 "main.h"
 void cmp_sensor(void);
 
-# 29
+# 34
 typedef unsigned char uint8_t;
 typedef signed char int8_t;
 typedef unsigned short uint16_t;
@@ -5871,14 +5871,12 @@ typedef signed short int16_t;
 typedef unsigned long uint32_t;
 typedef signed long int32_t;
 
-# 14 "main.c"
+# 21 "main.c"
 uint8_t interrupt_timer0 = 0;
 uint8_t rpm_ckp = 0;
 uint8_t rpm_cmp = 0;
 uint8_t turn_ctrl;
-uint8_t wave = 0;
 uint8_t count = 0;
-uint8_t i = 0;
 
 
 
@@ -5890,11 +5888,11 @@ uint16_t sinewave[] =
 415,380,311,246,185,132,86,49,22,0
 };
 
-# 35
+# 40
 void __interrupt() ISR()
 {
 
-# 41
+# 46
 if(INTCONbits.TMR0IF)
 {
 INTCONbits.TMR0IF = 0;
@@ -5903,7 +5901,7 @@ LATBbits.LATB7 = ~LATBbits.LATB7;
 
 }
 
-# 53
+# 58
 if(TMR1IF)
 {
 
@@ -5920,7 +5918,7 @@ if(count > 41) count = 0;
 
 }
 
-# 73
+# 78
 if(PIR1bits.TMR2IF)
 {
 LATBbits.LATB6 = ~PORTBbits.RB6;
@@ -5962,7 +5960,7 @@ if(rpm_cmp > 119) rpm_cmp = 0;
 
 }
 
-# 117
+# 122
 void main()
 {
 pic_ini();

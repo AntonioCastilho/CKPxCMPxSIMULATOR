@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.50\pic\dat\20240725155939_en.msgs \
   -cn -h+dist/default/production\sim-rpm-rev00.X.production.sym \
   --cmf=dist/default/production\sim-rpm-rev00.X.production.cmf -z -Q18F4550 \
-  -oC:\Users\casti\AppData\Local\Temp\xcAs91k.\driver_tmp_3.o \
+  -oC:\Users\casti\AppData\Local\Temp\xcAs7c.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/sim-rpm-rev00.X.production.map \
-  --md=C:\Users\casti\AppData\Local\Temp\xcAs91k.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\casti\AppData\Local\Temp\xcAs7c.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-062AFh,078CAh-07FFFh \
   -ACONST=00h-062AFh,078CAh-07FFFh \
   -ASMALLCONST=0800h-08FFhx90,06200h-062AFh,078CAh-078FFh,07900h-079FFhx7 \
@@ -27,7 +27,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\casti\AppData\Local\Temp\xcAs91k.\driver_tmp_9.o \
+  C:\Users\casti\AppData\Local\Temp\xcAs7c.\driver_tmp_9.o \
   dist/default/production\sim-rpm-rev00.X.production.o 
 
 Object code version is 3.11
@@ -37,12 +37,12 @@ Machine type is 18F4550
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\casti\AppData\Local\Temp\xcAs91k.\driver_tmp_9.o
+C:\Users\casti\AppData\Local\Temp\xcAs7c.\driver_tmp_9.o
                 init                                  E        E        4        4       0
                 reset_vec                             0        0        4        0       0
 dist/default/production\sim-rpm-rev00.X.production.o
                 intcode                               8        8        6        4       0
-                temp                                 45       45        1        1       1
+                temp                                 43       43        1        1       1
                 smallconst                          800      800        2      400       0
                 text30                             24EE     24EE       3C      401       0
                 text29                             10E2     10E2      426      401       0
@@ -78,7 +78,7 @@ dist/default/production\sim-rpm-rev00.X.production.o
                 cstackCOMRAM                          1        1       3B        1       1
                 cstackBANK0                          60       60       6E       60       1
                 dataBANK1                           100      100       52      100       1
-                bssCOMRAM                            3C       3C        9        1       1
+                bssCOMRAM                            3C       3C        7        1       1
                 cinit                              252A     252A       36      401       0
                 idataBANK1                         240E     240E       52      401       0
 
@@ -129,9 +129,9 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                temp                                 45       45        1         1
+                temp                                 43       43        1         1
                 cstackCOMRAM                          1        1       3B         1
-                bssCOMRAM                            3C       3C        9         1
+                bssCOMRAM                            3C       3C        7         1
 
         CLASS   ABS1           
 
@@ -178,7 +178,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000045  000046         1       1  COMRAM  
+                cstackCOMRAM                   000001  000043  000044         1       1  COMRAM  
                 intcode                        000008  00000A  000012         4       0  CODE    
                 cstackBANK0                    000060  00006E  0000CE        60       1  BANK0   
                 dataBANK1                      000100  000052  000152       100       1  BANK1   
@@ -197,7 +197,7 @@ UNUSED ADDRESS RANGES
         BANK5            0500-05FF            100
         BANK6            0600-06FF            100
         BANK7            0700-07FF            100
-        BIGRAM           0046-005F             1A
+        BIGRAM           0044-005F             1C
                          00CE-00FF             32
                          0152-07FF            6AE
         BIGSFR           0F60-0FFF             A0
@@ -205,7 +205,7 @@ UNUSED ADDRESS RANGES
                          0012-07FF            7EE
                          260E-62AF           3CA2
                          78CA-7FFF            736
-        COMRAM           0046-005F             1A
+        COMRAM           0044-005F             1C
         CONFIG           300000-30000D              E
         CONST            0004-0007              4
                          0012-07FF            7EE
@@ -342,7 +342,7 @@ __Hspace_2                 (abs)        0000
 __Hspace_4                 (abs)        0000
 __Hstack                   stack        0000
 __Hstruct                  struct       0000
-__Htemp                    temp         0046
+__Htemp                    temp         0044
 __Htext                    text         0000
 __Htext0                   text0        0000
 __Htext1                   text1        0000
@@ -440,7 +440,7 @@ __Lspace_2                 (abs)        0000
 __Lspace_4                 (abs)        0000
 __Lstack                   stack        0000
 __Lstruct                  struct       0000
-__Ltemp                    temp         0045
+__Ltemp                    temp         0043
 __Ltext                    text         0000
 __Ltext0                   text0        0000
 __Ltext1                   text1        0000
@@ -603,27 +603,26 @@ __ptext9                   text9        2132
 __ramtop                   ramtop       0800
 __smallconst               smallconst   0800
 _adc_ini                   text23       25C0
-_count                     bssCOMRAM    003F
+_count                     bssCOMRAM    003E
 _errno                     bssCOMRAM    003C
 _frexp                     text11       21D4
-_i                         bssCOMRAM    003E
-_interrupt_timer0          bssCOMRAM    0044
+_interrupt_timer0          bssCOMRAM    0042
 _lcd_com                   text20       1F12
 _lcd_ini                   text18       22E8
 _main                      text0        24A8
 _ms_time                   text19       234A
 _pic_ini                   text1        2560
 _pwm1_ini                  text8        1ACA
-_pwm1_ini$1662             cstackBANK0  00BD
-_pwm1_ini$1663             cstackBANK0  00C1
-_pwm1_ini$1664             cstackBANK0  00C5
+_pwm1_ini$1660             cstackBANK0  00BD
+_pwm1_ini$1661             cstackBANK0  00C1
+_pwm1_ini$1662             cstackBANK0  00C5
 _pwm2_ini                  text7        1E1E
-_pwm2_ini$1665             cstackBANK0  00BD
-_pwm2_ini$1666             cstackBANK0  00C1
+_pwm2_ini$1663             cstackBANK0  00BD
+_pwm2_ini$1664             cstackBANK0  00C1
 _pwm2_setDutyPot           text30       24EE
 _round                     text9        2132
-_rpm_ckp                   bssCOMRAM    0043
-_rpm_cmp                   bssCOMRAM    0042
+_rpm_ckp                   bssCOMRAM    0041
+_rpm_cmp                   bssCOMRAM    0040
 _sinewave                  dataBANK1    0100
 _timer0_ini                text5        25A8
 _timer0_write              text6        25EE
@@ -631,10 +630,9 @@ _timer1_ini                text3        258C
 _timer1_write              text4        25E2
 _timer2_ini                text2        25D4
 _trunc                     text10       1FD2
-_turn_ctrl                 bssCOMRAM    0041
+_turn_ctrl                 bssCOMRAM    003F
 _us_time                   text21       23AC
-_wave                      bssCOMRAM    0040
-btemp                      temp         0045
+btemp                      temp         0043
 end_of_initialization      cinit        2556
 frexp@eptr                 cstackBANK0  0070
 frexp@value                cstackBANK0  006C
@@ -660,7 +658,7 @@ i2_timer0_write            text26       2604
 i2_timer1_write            text25       25FA
 i2timer0_write@timer_value cstackCOMRAM 0001
 i2timer1_write@timer_value cstackCOMRAM 0001
-int$flags                  temp         0045
+int$flags                  temp         0043
 int_func                   intcode_body 1508
 intlevel0                  text         0000
 intlevel1                  text         0000
@@ -688,13 +686,13 @@ timer1_write@timer_value   cstackBANK0  0060
 trunc@expon                cstackBANK0  00A9
 trunc@i                    cstackBANK0  00A5
 trunc@x                    cstackBANK0  00A1
-ttemp5                     temp         0046
-ttemp6                     temp         0049
-ttemp7                     temp         004D
+ttemp5                     temp         0044
+ttemp6                     temp         0047
+ttemp7                     temp         004B
 us_time@sus                cstackBANK0  006B
 us_time@tus                cstackBANK0  0069
 us_time@us                 cstackBANK0  0067
-wtemp8                     temp         0046
+wtemp8                     temp         0044
 
 
 MODULE INFORMATION

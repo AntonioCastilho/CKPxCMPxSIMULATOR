@@ -5771,10 +5771,10 @@ extern double fmod(double, double);
 extern double trunc(double);
 extern double round(double);
 
-# 17 "main.h"
+# 22 "main.h"
 void cmp_sensor(void);
 
-# 29
+# 34
 typedef unsigned char uint8_t;
 typedef signed char int8_t;
 typedef unsigned short uint16_t;
@@ -5794,7 +5794,7 @@ uint8_t digit_counter(uint16_t number);
 void ms_time(uint16_t ms);
 void us_time(uint16_t us);
 
-# 22 "hardware.h"
+# 31 "hardware.h"
 void pic_ini(void);
 void timer0_ini(void);
 void timer1_ini(void);
@@ -5811,15 +5811,15 @@ void pwm2_setDutyPot(uint16_t ccpr2_aux);
 void pwm1_setPeriod(uint8_t period);
 void pwm2_setPeriod(uint8_t period);
 
-# 13 "hardware.c"
+# 20 "hardware.c"
 void pic_ini(void)
 {
 
-# 17
+# 24
 INTCONbits.GIE = 1;
 INTCONbits.PEIE_GIEL = 1;
 
-# 23
+# 30
 lcd_ini(); lcd_com(0x0C);
 adc_ini();
 timer0_ini();
@@ -5828,7 +5828,7 @@ timer2_ini();
 pwm1_ini();
 pwm2_ini();
 
-# 35
+# 42
 TRISB = 0x00;
 LATB = 0xFF;
 
@@ -5874,7 +5874,7 @@ TMR1L = (timer_value & 0x00FF);
 TMR1H = (timer_value >> 8) & 0x00FF;
 }
 
-# 85
+# 92
 void timer2_ini(void)
 {
 T2CON = 0x07;
@@ -5940,7 +5940,7 @@ CCP1CONbits.DC1B0 = cycle;
 CCP1CONbits.DC1B1 = cycle >> 1;
 CCPR1L = cycle >> 2;
 
-# 153
+# 160
 TRISBbits.TRISB0 = 0;
 LATBbits.LATB0 = 1;
 
@@ -5955,13 +5955,13 @@ void pwm2_ini(void)
 
 TRISCbits.RC1 = 0;
 
-# 172
+# 179
 CCP2CON = 0X0F;
 
 
 uint8_t pr_var = PR2;
 
-# 183
+# 190
 uint16_t cycle2 =
 (uint16_t)(round(((((float)500)/1000.0)*4.0*(
 (float)(pr_var)+1.0))));

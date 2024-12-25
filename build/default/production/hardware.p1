@@ -17,17 +17,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_ini `(v ~T0 @X0 0 ef ]
 "105
 [v _lcd_com `(v ~T0 @X0 0 ef1`uc ]
-"29 hardware.h
+"38 hardware.h
 [v _adc_ini `(v ~T0 @X0 0 ef ]
-"23
-[v _timer0_ini `(v ~T0 @X0 0 ef ]
-"24
-[v _timer1_ini `(v ~T0 @X0 0 ef ]
-"26
-[v _timer2_ini `(v ~T0 @X0 0 ef ]
-"31
-[v _pwm1_ini `(v ~T0 @X0 0 ef ]
 "32
+[v _timer0_ini `(v ~T0 @X0 0 ef ]
+"33
+[v _timer1_ini `(v ~T0 @X0 0 ef ]
+"35
+[v _timer2_ini `(v ~T0 @X0 0 ef ]
+"40
+[v _pwm1_ini `(v ~T0 @X0 0 ef ]
+"41
 [v _pwm2_ini `(v ~T0 @X0 0 ef ]
 "3625 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
 [v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
@@ -46,7 +46,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S341 . . . ]
 "8089
 [v _T0CONbits `VS341 ~T0 @X0 0 e@4053 ]
-"27 hardware.h
+"36 hardware.h
 [v _timer0_write `(v ~T0 @X0 0 ef1`ui ]
 "8146 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
@@ -71,7 +71,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIE1bits `VS169 ~T0 @X0 0 e@3997 ]
 "10834
 [v _TMR1IF `Vb ~T0 @X0 0 e@31984 ]
-"25 hardware.h
+"34 hardware.h
 [v _timer1_write `(v ~T0 @X0 0 ef1`ui ]
 "7200 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
 [v _T2CON `Vuc ~T0 @X0 0 e@4042 ]
@@ -3843,13 +3843,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;math.h: 53: extern double fmod(double, double);
 [; ;math.h: 54: extern double trunc(double);
 [; ;math.h: 55: extern double round(double);
-[; ;main.h: 17: void cmp_sensor(void);
-[; ;main.h: 29: typedef unsigned char uint8_t;
-[; ;main.h: 30: typedef signed char int8_t;
-[; ;main.h: 31: typedef unsigned short uint16_t;
-[; ;main.h: 32: typedef signed short int16_t;
-[; ;main.h: 33: typedef unsigned long uint32_t;
-[; ;main.h: 34: typedef signed long int32_t;
+[; ;main.h: 22: void cmp_sensor(void);
+[; ;main.h: 34: typedef unsigned char uint8_t;
+[; ;main.h: 35: typedef signed char int8_t;
+[; ;main.h: 36: typedef unsigned short uint16_t;
+[; ;main.h: 37: typedef signed short int16_t;
+[; ;main.h: 38: typedef unsigned long uint32_t;
+[; ;main.h: 39: typedef signed long int32_t;
 [; ;lcd.h: 105: void lcd_com(uint8_t cmd);
 [; ;lcd.h: 106: void lcd_ini(void);
 [; ;lcd.h: 107: void lcd_prtChar(uint8_t dat);
@@ -3858,429 +3858,429 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 111: uint8_t digit_counter(uint16_t number);
 [; ;lcd.h: 113: void ms_time(uint16_t ms);
 [; ;lcd.h: 114: void us_time(uint16_t us);
-[; ;hardware.h: 22: void pic_ini(void);
-[; ;hardware.h: 23: void timer0_ini(void);
-[; ;hardware.h: 24: void timer1_ini(void);
-[; ;hardware.h: 25: void timer1_write(uint16_t timer_value);
-[; ;hardware.h: 26: void timer2_ini(void);
-[; ;hardware.h: 27: void timer0_write(uint16_t timer_value);
-[; ;hardware.h: 28: void timer2_write( uint8_t timer_value);
-[; ;hardware.h: 29: void adc_ini(void);
-[; ;hardware.h: 30: uint16_t adc_read(uint8_t ch);
-[; ;hardware.h: 31: void pwm1_ini(void);
-[; ;hardware.h: 32: void pwm2_ini(void);
-[; ;hardware.h: 33: void pwm1_setDutyPot(uint16_t ccpr1_aux);
-[; ;hardware.h: 34: void pwm2_setDutyPot(uint16_t ccpr2_aux);
-[; ;hardware.h: 35: void pwm1_setPeriod(uint8_t period);
-[; ;hardware.h: 36: void pwm2_setPeriod(uint8_t period);
-"13 hardware.c
+[; ;hardware.h: 31: void pic_ini(void);
+[; ;hardware.h: 32: void timer0_ini(void);
+[; ;hardware.h: 33: void timer1_ini(void);
+[; ;hardware.h: 34: void timer1_write(uint16_t timer_value);
+[; ;hardware.h: 35: void timer2_ini(void);
+[; ;hardware.h: 36: void timer0_write(uint16_t timer_value);
+[; ;hardware.h: 37: void timer2_write( uint8_t timer_value);
+[; ;hardware.h: 38: void adc_ini(void);
+[; ;hardware.h: 39: uint16_t adc_read(uint8_t ch);
+[; ;hardware.h: 40: void pwm1_ini(void);
+[; ;hardware.h: 41: void pwm2_ini(void);
+[; ;hardware.h: 42: void pwm1_setDutyPot(uint16_t ccpr1_aux);
+[; ;hardware.h: 43: void pwm2_setDutyPot(uint16_t ccpr2_aux);
+[; ;hardware.h: 44: void pwm1_setPeriod(uint8_t period);
+[; ;hardware.h: 45: void pwm2_setPeriod(uint8_t period);
+"20 hardware.c
 [v _pic_ini `(v ~T0 @X0 1 ef ]
-"14
+"21
 {
-[; ;hardware.c: 13: void pic_ini(void)
-[; ;hardware.c: 14: {
+[; ;hardware.c: 20: void pic_ini(void)
+[; ;hardware.c: 21: {
 [e :U _pic_ini ]
 [f ]
-[; ;hardware.c: 17: INTCONbits.GIE = 1;
-"17
+[; ;hardware.c: 24: INTCONbits.GIE = 1;
+"24
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;hardware.c: 18: INTCONbits.PEIE_GIEL = 1;
-"18
+[; ;hardware.c: 25: INTCONbits.PEIE_GIEL = 1;
+"25
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;hardware.c: 23: lcd_ini(); lcd_com(0x0C);
-"23
+[; ;hardware.c: 30: lcd_ini(); lcd_com(0x0C);
+"30
 [e ( _lcd_ini ..  ]
 [e ( _lcd_com (1 -> -> 12 `i `uc ]
-[; ;hardware.c: 24: adc_ini();
-"24
+[; ;hardware.c: 31: adc_ini();
+"31
 [e ( _adc_ini ..  ]
-[; ;hardware.c: 25: timer0_ini();
-"25
+[; ;hardware.c: 32: timer0_ini();
+"32
 [e ( _timer0_ini ..  ]
-[; ;hardware.c: 26: timer1_ini();
-"26
+[; ;hardware.c: 33: timer1_ini();
+"33
 [e ( _timer1_ini ..  ]
-[; ;hardware.c: 27: timer2_ini();
-"27
+[; ;hardware.c: 34: timer2_ini();
+"34
 [e ( _timer2_ini ..  ]
-[; ;hardware.c: 28: pwm1_ini();
-"28
-[e ( _pwm1_ini ..  ]
-[; ;hardware.c: 29: pwm2_ini();
-"29
-[e ( _pwm2_ini ..  ]
-[; ;hardware.c: 35: TRISB = 0x00;
+[; ;hardware.c: 35: pwm1_ini();
 "35
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;hardware.c: 36: LATB = 0xFF;
+[e ( _pwm1_ini ..  ]
+[; ;hardware.c: 36: pwm2_ini();
 "36
+[e ( _pwm2_ini ..  ]
+[; ;hardware.c: 42: TRISB = 0x00;
+"42
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;hardware.c: 43: LATB = 0xFF;
+"43
 [e = _LATB -> -> 255 `i `uc ]
-[; ;hardware.c: 38: }
-"38
+[; ;hardware.c: 45: }
+"45
 [e :UE 366 ]
 }
-"41
+"48
 [v _timer0_ini `(v ~T0 @X0 1 ef ]
-"42
+"49
 {
-[; ;hardware.c: 41: void timer0_ini(void)
-[; ;hardware.c: 42: {
+[; ;hardware.c: 48: void timer0_ini(void)
+[; ;hardware.c: 49: {
 [e :U _timer0_ini ]
 [f ]
-[; ;hardware.c: 43: T0CON = 0x90;
-"43
+[; ;hardware.c: 50: T0CON = 0x90;
+"50
 [e = _T0CON -> -> 144 `i `uc ]
-[; ;hardware.c: 44: T0CONbits.TMR0ON = 1;
-"44
+[; ;hardware.c: 51: T0CONbits.TMR0ON = 1;
+"51
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;hardware.c: 45: INTCONbits.TMR0IE = 1;
-"45
+[; ;hardware.c: 52: INTCONbits.TMR0IE = 1;
+"52
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;hardware.c: 47: timer0_write(0xFE0C);
-"47
+[; ;hardware.c: 54: timer0_write(0xFE0C);
+"54
 [e ( _timer0_write (1 -> 65036 `ui ]
-[; ;hardware.c: 49: }
-"49
+[; ;hardware.c: 56: }
+"56
 [e :UE 367 ]
 }
-"52
+"59
 [v _timer0_write `(v ~T0 @X0 1 ef1`ui ]
-"53
+"60
 {
-[; ;hardware.c: 52: void timer0_write( uint16_t timer_value)
-[; ;hardware.c: 53: {
+[; ;hardware.c: 59: void timer0_write( uint16_t timer_value)
+[; ;hardware.c: 60: {
 [e :U _timer0_write ]
-"52
+"59
 [v _timer_value `ui ~T0 @X0 1 r1 ]
-"53
+"60
 [f ]
-[; ;hardware.c: 54: TMR0L = (timer_value & 0x00FF);
-"54
+[; ;hardware.c: 61: TMR0L = (timer_value & 0x00FF);
+"61
 [e = _TMR0L -> & _timer_value -> -> 255 `i `ui `uc ]
-[; ;hardware.c: 55: TMR0H = (timer_value >> 8) & 0x00FF;
-"55
+[; ;hardware.c: 62: TMR0H = (timer_value >> 8) & 0x00FF;
+"62
 [e = _TMR0H -> & >> _timer_value -> 8 `i -> -> 255 `i `ui `uc ]
-[; ;hardware.c: 57: }
-"57
+[; ;hardware.c: 64: }
+"64
 [e :UE 368 ]
 }
-"60
+"67
 [v _timer1_ini `(v ~T0 @X0 1 ef ]
-"61
+"68
 {
-[; ;hardware.c: 60: void timer1_ini(void)
-[; ;hardware.c: 61: {
+[; ;hardware.c: 67: void timer1_ini(void)
+[; ;hardware.c: 68: {
 [e :U _timer1_ini ]
 [f ]
-[; ;hardware.c: 62: T1CON = 0xB1;
-"62
-[e = _T1CON -> -> 177 `i `uc ]
-[; ;hardware.c: 63: TMR1L = 0;
-"63
-[e = _TMR1L -> -> 0 `i `uc ]
-[; ;hardware.c: 64: TMR1H = 0;
-"64
-[e = _TMR1H -> -> 0 `i `uc ]
-[; ;hardware.c: 65: PIE1bits.TMR1IE = 1;
-"65
-[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-[; ;hardware.c: 67: TMR1IF = 0;
-"67
-[e = _TMR1IF -> -> 0 `i `b ]
-[; ;hardware.c: 69: timer1_write(0xCF2C);
+[; ;hardware.c: 69: T1CON = 0xB1;
 "69
-[e ( _timer1_write (1 -> 53036 `ui ]
-[; ;hardware.c: 71: }
+[e = _T1CON -> -> 177 `i `uc ]
+[; ;hardware.c: 70: TMR1L = 0;
+"70
+[e = _TMR1L -> -> 0 `i `uc ]
+[; ;hardware.c: 71: TMR1H = 0;
 "71
-[e :UE 369 ]
-}
+[e = _TMR1H -> -> 0 `i `uc ]
+[; ;hardware.c: 72: PIE1bits.TMR1IE = 1;
+"72
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+[; ;hardware.c: 74: TMR1IF = 0;
 "74
-[v _timer1_write `(v ~T0 @X0 1 ef1`ui ]
-"75
-{
-[; ;hardware.c: 74: void timer1_write(uint16_t timer_value)
-[; ;hardware.c: 75: {
-[e :U _timer1_write ]
-"74
-[v _timer_value `ui ~T0 @X0 1 r1 ]
-"75
-[f ]
-[; ;hardware.c: 76: TMR1L = (timer_value & 0x00FF);
+[e = _TMR1IF -> -> 0 `i `b ]
+[; ;hardware.c: 76: timer1_write(0xCF2C);
 "76
-[e = _TMR1L -> & _timer_value -> -> 255 `i `ui `uc ]
-[; ;hardware.c: 77: TMR1H = (timer_value >> 8) & 0x00FF;
-"77
-[e = _TMR1H -> & >> _timer_value -> 8 `i -> -> 255 `i `ui `uc ]
+[e ( _timer1_write (1 -> 53036 `ui ]
 [; ;hardware.c: 78: }
 "78
+[e :UE 369 ]
+}
+"81
+[v _timer1_write `(v ~T0 @X0 1 ef1`ui ]
+"82
+{
+[; ;hardware.c: 81: void timer1_write(uint16_t timer_value)
+[; ;hardware.c: 82: {
+[e :U _timer1_write ]
+"81
+[v _timer_value `ui ~T0 @X0 1 r1 ]
+"82
+[f ]
+[; ;hardware.c: 83: TMR1L = (timer_value & 0x00FF);
+"83
+[e = _TMR1L -> & _timer_value -> -> 255 `i `ui `uc ]
+[; ;hardware.c: 84: TMR1H = (timer_value >> 8) & 0x00FF;
+"84
+[e = _TMR1H -> & >> _timer_value -> 8 `i -> -> 255 `i `ui `uc ]
+[; ;hardware.c: 85: }
+"85
 [e :UE 370 ]
 }
-"85
+"92
 [v _timer2_ini `(v ~T0 @X0 1 ef ]
-"86
+"93
 {
-[; ;hardware.c: 85: void timer2_ini(void)
-[; ;hardware.c: 86: {
+[; ;hardware.c: 92: void timer2_ini(void)
+[; ;hardware.c: 93: {
 [e :U _timer2_ini ]
 [f ]
-[; ;hardware.c: 87: T2CON = 0x07;
-"87
+[; ;hardware.c: 94: T2CON = 0x07;
+"94
 [e = _T2CON -> -> 7 `i `uc ]
-[; ;hardware.c: 88: PIE1bits.TMR2IE = 1;
-"88
+[; ;hardware.c: 95: PIE1bits.TMR2IE = 1;
+"95
 [e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
-[; ;hardware.c: 89: PIR1bits.TMR2IF = 0;
-"89
+[; ;hardware.c: 96: PIR1bits.TMR2IF = 0;
+"96
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-[; ;hardware.c: 90: IPR1bits.TMR2IP = 1;
-"90
+[; ;hardware.c: 97: IPR1bits.TMR2IP = 1;
+"97
 [e = . . _IPR1bits 0 1 -> -> 1 `i `uc ]
-[; ;hardware.c: 91: TMR2 = 0;
-"91
+[; ;hardware.c: 98: TMR2 = 0;
+"98
 [e = _TMR2 -> -> 0 `i `uc ]
-[; ;hardware.c: 93: }
-"93
+[; ;hardware.c: 100: }
+"100
 [e :UE 371 ]
 }
-"96
+"103
 [v _adc_ini `(v ~T0 @X0 1 ef ]
-"97
+"104
 {
-[; ;hardware.c: 96: void adc_ini(void)
-[; ;hardware.c: 97: {
+[; ;hardware.c: 103: void adc_ini(void)
+[; ;hardware.c: 104: {
 [e :U _adc_ini ]
 [f ]
-[; ;hardware.c: 99: TRISA = 0x0F;
-"99
-[e = _TRISA -> -> 15 `i `uc ]
-[; ;hardware.c: 100: ADCON1 = 0x0B;
-"100
-[e = _ADCON1 -> -> 11 `i `uc ]
-[; ;hardware.c: 101: ADCON2 = 0xBE;
-"101
-[e = _ADCON2 -> -> 190 `i `uc ]
-[; ;hardware.c: 102: ADCON0bits.ADON = 1;
-"102
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-[; ;hardware.c: 103: ADRESH=0;
-"103
-[e = _ADRESH -> -> 0 `i `uc ]
-[; ;hardware.c: 104: ADRESL=0;
-"104
-[e = _ADRESL -> -> 0 `i `uc ]
-[; ;hardware.c: 106: }
+[; ;hardware.c: 106: TRISA = 0x0F;
 "106
+[e = _TRISA -> -> 15 `i `uc ]
+[; ;hardware.c: 107: ADCON1 = 0x0B;
+"107
+[e = _ADCON1 -> -> 11 `i `uc ]
+[; ;hardware.c: 108: ADCON2 = 0xBE;
+"108
+[e = _ADCON2 -> -> 190 `i `uc ]
+[; ;hardware.c: 109: ADCON0bits.ADON = 1;
+"109
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;hardware.c: 110: ADRESH=0;
+"110
+[e = _ADRESH -> -> 0 `i `uc ]
+[; ;hardware.c: 111: ADRESL=0;
+"111
+[e = _ADRESL -> -> 0 `i `uc ]
+[; ;hardware.c: 113: }
+"113
 [e :UE 372 ]
 }
-"109
+"116
 [v _adc_read `(ui ~T0 @X0 1 ef1`uc ]
-"110
+"117
 {
-[; ;hardware.c: 109: uint16_t adc_read(uint8_t ch)
-[; ;hardware.c: 110: {
+[; ;hardware.c: 116: uint16_t adc_read(uint8_t ch)
+[; ;hardware.c: 117: {
 [e :U _adc_read ]
-"109
+"116
 [v _ch `uc ~T0 @X0 1 r1 ]
-"110
+"117
 [f ]
-"111
+"118
 [v _value `ui ~T0 @X0 1 a ]
-[; ;hardware.c: 111: uint16_t value;
-[; ;hardware.c: 112: ADCON0bits.CHS = ch;
-"112
+[; ;hardware.c: 118: uint16_t value;
+[; ;hardware.c: 119: ADCON0bits.CHS = ch;
+"119
 [e = . . _ADCON0bits 1 2 _ch ]
-[; ;hardware.c: 113: ADCON0bits.GO = 1;
-"113
+[; ;hardware.c: 120: ADCON0bits.GO = 1;
+"120
 [e = . . _ADCON0bits 4 1 -> -> 1 `i `uc ]
-[; ;hardware.c: 114: while(ADCON0bits.GO_DONE == 1);
-"114
+[; ;hardware.c: 121: while(ADCON0bits.GO_DONE == 1);
+"121
 [e $U 374  ]
 [e :U 375 ]
 [e :U 374 ]
 [e $ == -> . . _ADCON0bits 2 1 `i -> 1 `i 375  ]
 [e :U 376 ]
-[; ;hardware.c: 115: value = (uint16_t)((ADRESH << 8) + ADRESL);
-"115
+[; ;hardware.c: 122: value = (uint16_t)((ADRESH << 8) + ADRESL);
+"122
 [e = _value -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
-[; ;hardware.c: 116: return value;
-"116
+[; ;hardware.c: 123: return value;
+"123
 [e ) _value ]
 [e $UE 373  ]
-[; ;hardware.c: 118: }
-"118
+[; ;hardware.c: 125: }
+"125
 [e :UE 373 ]
 }
-"121
+"128
 [v _pwm1_ini `(v ~T0 @X0 1 ef ]
-"122
+"129
 {
-[; ;hardware.c: 121: void pwm1_ini(void)
-[; ;hardware.c: 122: {
+[; ;hardware.c: 128: void pwm1_ini(void)
+[; ;hardware.c: 129: {
 [e :U _pwm1_ini ]
 [f ]
-[; ;hardware.c: 124: TRISCbits.RC2 = 0;
-"124
-[e = . . _TRISCbits 1 2 -> -> 0 `i `uc ]
-[; ;hardware.c: 126: OSCCON = 0x72;
-"126
-[e = _OSCCON -> -> 114 `i `uc ]
-[; ;hardware.c: 127: T2CONbits.TMR2ON = 1;
-"127
-[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-[; ;hardware.c: 128: TMR2 = 0;
-"128
-[e = _TMR2 -> -> 0 `i `uc ]
-[; ;hardware.c: 131: CCP1CON = 0X0F;
+[; ;hardware.c: 131: TRISCbits.RC2 = 0;
 "131
-[e = _CCP1CON -> -> 15 `i `uc ]
+[e = . . _TRISCbits 1 2 -> -> 0 `i `uc ]
+[; ;hardware.c: 133: OSCCON = 0x72;
+"133
+[e = _OSCCON -> -> 114 `i `uc ]
+[; ;hardware.c: 134: T2CONbits.TMR2ON = 1;
 "134
+[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+[; ;hardware.c: 135: TMR2 = 0;
+"135
+[e = _TMR2 -> -> 0 `i `uc ]
+[; ;hardware.c: 138: CCP1CON = 0X0F;
+"138
+[e = _CCP1CON -> -> 15 `i `uc ]
+"141
 [v _pr_var `uc ~T0 @X0 1 a ]
-[; ;hardware.c: 134: uint8_t pr_var = 0;
+[; ;hardware.c: 141: uint8_t pr_var = 0;
 [e = _pr_var -> -> 0 `i `uc ]
-[; ;hardware.c: 135: pr_var =
-[; ;hardware.c: 136: (uint8_t)(round((1/(float)900)/((4/(float)8000000) *
-[; ;hardware.c: 137: (float)16 * (float)1)));
-"137
-[e = _pr_var -> ( _round (1 -> / / -> -> 1 `i `f -> -> 900 `i `f * * / -> -> 4 `i `f -> -> 8000000 `l `f -> -> 16 `i `f -> -> 1 `i `f `d `uc ]
-[; ;hardware.c: 139: PR2 = pr_var;
-"139
-[e = _PR2 _pr_var ]
-"142
-[v _cycle `ui ~T0 @X0 1 a ]
-[; ;hardware.c: 142: uint16_t cycle =
-[; ;hardware.c: 143: (uint16_t)(round(((((float)500)/1000.0)*4.0*(
-[; ;hardware.c: 144: (float)(pr_var)+1.0))));
+[; ;hardware.c: 142: pr_var =
+[; ;hardware.c: 143: (uint8_t)(round((1/(float)900)/((4/(float)8000000) *
+[; ;hardware.c: 144: (float)16 * (float)1)));
 "144
-[e = _cycle -> ( _round (1 * * / -> -> -> 500 `i `f `d .1000.0 .4.0 + -> -> _pr_var `f `d .1.0 `ui ]
-[; ;hardware.c: 146: CCP1CONbits.DC1B0 = cycle;
+[e = _pr_var -> ( _round (1 -> / / -> -> 1 `i `f -> -> 900 `i `f * * / -> -> 4 `i `f -> -> 8000000 `l `f -> -> 16 `i `f -> -> 1 `i `f `d `uc ]
+[; ;hardware.c: 146: PR2 = pr_var;
 "146
-[e = . . _CCP1CONbits 1 4 -> _cycle `uc ]
-[; ;hardware.c: 147: CCP1CONbits.DC1B1 = cycle >> 1;
-"147
-[e = . . _CCP1CONbits 1 5 -> >> _cycle -> 1 `i `uc ]
-[; ;hardware.c: 148: CCPR1L = cycle >> 2;
-"148
-[e = _CCPR1L -> >> _cycle -> 2 `i `uc ]
-[; ;hardware.c: 153: TRISBbits.TRISB0 = 0;
+[e = _PR2 _pr_var ]
+"149
+[v _cycle `ui ~T0 @X0 1 a ]
+[; ;hardware.c: 149: uint16_t cycle =
+[; ;hardware.c: 150: (uint16_t)(round(((((float)500)/1000.0)*4.0*(
+[; ;hardware.c: 151: (float)(pr_var)+1.0))));
+"151
+[e = _cycle -> ( _round (1 * * / -> -> -> 500 `i `f `d .1000.0 .4.0 + -> -> _pr_var `f `d .1.0 `ui ]
+[; ;hardware.c: 153: CCP1CONbits.DC1B0 = cycle;
 "153
-[e = . . _TRISBbits 0 0 -> -> 0 `i `uc ]
-[; ;hardware.c: 154: LATBbits.LATB0 = 1;
+[e = . . _CCP1CONbits 1 4 -> _cycle `uc ]
+[; ;hardware.c: 154: CCP1CONbits.DC1B1 = cycle >> 1;
 "154
+[e = . . _CCP1CONbits 1 5 -> >> _cycle -> 1 `i `uc ]
+[; ;hardware.c: 155: CCPR1L = cycle >> 2;
+"155
+[e = _CCPR1L -> >> _cycle -> 2 `i `uc ]
+[; ;hardware.c: 160: TRISBbits.TRISB0 = 0;
+"160
+[e = . . _TRISBbits 0 0 -> -> 0 `i `uc ]
+[; ;hardware.c: 161: LATBbits.LATB0 = 1;
+"161
 [e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
-[; ;hardware.c: 156: ECCP1DEL = 0b10000000;
-"156
+[; ;hardware.c: 163: ECCP1DEL = 0b10000000;
+"163
 [e = _ECCP1DEL -> -> 128 `i `uc ]
-[; ;hardware.c: 157: ECCP1AS = 0b11010000;
-"157
+[; ;hardware.c: 164: ECCP1AS = 0b11010000;
+"164
 [e = _ECCP1AS -> -> 208 `i `uc ]
-[; ;hardware.c: 159: }
-"159
+[; ;hardware.c: 166: }
+"166
 [e :UE 377 ]
 }
-"162
+"169
 [v _pwm2_ini `(v ~T0 @X0 1 ef ]
-"163
+"170
 {
-[; ;hardware.c: 162: void pwm2_ini(void)
-[; ;hardware.c: 163: {
+[; ;hardware.c: 169: void pwm2_ini(void)
+[; ;hardware.c: 170: {
 [e :U _pwm2_ini ]
 [f ]
-[; ;hardware.c: 165: TRISCbits.RC1 = 0;
-"165
-[e = . . _TRISCbits 1 1 -> -> 0 `i `uc ]
-[; ;hardware.c: 172: CCP2CON = 0X0F;
+[; ;hardware.c: 172: TRISCbits.RC1 = 0;
 "172
+[e = . . _TRISCbits 1 1 -> -> 0 `i `uc ]
+[; ;hardware.c: 179: CCP2CON = 0X0F;
+"179
 [e = _CCP2CON -> -> 15 `i `uc ]
-"175
+"182
 [v _pr_var `uc ~T0 @X0 1 a ]
-[; ;hardware.c: 175: uint8_t pr_var = PR2;
+[; ;hardware.c: 182: uint8_t pr_var = PR2;
 [e = _pr_var _PR2 ]
-"183
+"190
 [v _cycle2 `ui ~T0 @X0 1 a ]
-[; ;hardware.c: 183: uint16_t cycle2 =
-[; ;hardware.c: 184: (uint16_t)(round(((((float)500)/1000.0)*4.0*(
-[; ;hardware.c: 185: (float)(pr_var)+1.0))));
-"185
+[; ;hardware.c: 190: uint16_t cycle2 =
+[; ;hardware.c: 191: (uint16_t)(round(((((float)500)/1000.0)*4.0*(
+[; ;hardware.c: 192: (float)(pr_var)+1.0))));
+"192
 [e = _cycle2 -> ( _round (1 * * / -> -> -> 500 `i `f `d .1000.0 .4.0 + -> -> _pr_var `f `d .1.0 `ui ]
-[; ;hardware.c: 187: CCP2CONbits.DC2B0 = cycle2;
-"187
+[; ;hardware.c: 194: CCP2CONbits.DC2B0 = cycle2;
+"194
 [e = . . _CCP2CONbits 1 4 -> _cycle2 `uc ]
-[; ;hardware.c: 188: CCP2CONbits.DC2B1 = cycle2 >> 1;
-"188
+[; ;hardware.c: 195: CCP2CONbits.DC2B1 = cycle2 >> 1;
+"195
 [e = . . _CCP2CONbits 1 5 -> >> _cycle2 -> 1 `i `uc ]
-[; ;hardware.c: 189: CCPR2L = cycle2 >> 2;
-"189
+[; ;hardware.c: 196: CCPR2L = cycle2 >> 2;
+"196
 [e = _CCPR2L -> >> _cycle2 -> 2 `i `uc ]
-[; ;hardware.c: 191: }
-"191
+[; ;hardware.c: 198: }
+"198
 [e :UE 378 ]
 }
-"193
+"200
 [v _pwm1_setDutyPot `(v ~T0 @X0 1 ef1`ui ]
-"194
+"201
 {
-[; ;hardware.c: 193: void pwm1_setDutyPot(uint16_t ccpr1_aux)
-[; ;hardware.c: 194: {
+[; ;hardware.c: 200: void pwm1_setDutyPot(uint16_t ccpr1_aux)
+[; ;hardware.c: 201: {
 [e :U _pwm1_setDutyPot ]
-"193
+"200
 [v _ccpr1_aux `ui ~T0 @X0 1 r1 ]
-"194
+"201
 [f ]
-[; ;hardware.c: 195: CCP1CONbits.DC1B0 = ccpr1_aux;
-"195
+[; ;hardware.c: 202: CCP1CONbits.DC1B0 = ccpr1_aux;
+"202
 [e = . . _CCP1CONbits 1 4 -> _ccpr1_aux `uc ]
-[; ;hardware.c: 196: CCP1CONbits.DC1B1 = ccpr1_aux >> 1;
-"196
+[; ;hardware.c: 203: CCP1CONbits.DC1B1 = ccpr1_aux >> 1;
+"203
 [e = . . _CCP1CONbits 1 5 -> >> _ccpr1_aux -> 1 `i `uc ]
-[; ;hardware.c: 197: CCPR1L = ccpr1_aux >> 2;
-"197
+[; ;hardware.c: 204: CCPR1L = ccpr1_aux >> 2;
+"204
 [e = _CCPR1L -> >> _ccpr1_aux -> 2 `i `uc ]
-[; ;hardware.c: 199: }
-"199
+[; ;hardware.c: 206: }
+"206
 [e :UE 379 ]
 }
-"204
+"211
 [v _pwm2_setDutyPot `(v ~T0 @X0 1 ef1`ui ]
-"205
+"212
 {
-[; ;hardware.c: 204: void pwm2_setDutyPot(uint16_t ccpr2_aux)
-[; ;hardware.c: 205: {
+[; ;hardware.c: 211: void pwm2_setDutyPot(uint16_t ccpr2_aux)
+[; ;hardware.c: 212: {
 [e :U _pwm2_setDutyPot ]
-"204
+"211
 [v _ccpr2_aux `ui ~T0 @X0 1 r1 ]
-"205
+"212
 [f ]
-[; ;hardware.c: 206: CCP2CONbits.DC2B0 = ccpr2_aux;
-"206
+[; ;hardware.c: 213: CCP2CONbits.DC2B0 = ccpr2_aux;
+"213
 [e = . . _CCP2CONbits 1 4 -> _ccpr2_aux `uc ]
-[; ;hardware.c: 207: CCP2CONbits.DC2B1 = ccpr2_aux >> 1;
-"207
+[; ;hardware.c: 214: CCP2CONbits.DC2B1 = ccpr2_aux >> 1;
+"214
 [e = . . _CCP2CONbits 1 5 -> >> _ccpr2_aux -> 1 `i `uc ]
-[; ;hardware.c: 208: CCPR2L = ccpr2_aux >> 2;
-"208
+[; ;hardware.c: 215: CCPR2L = ccpr2_aux >> 2;
+"215
 [e = _CCPR2L -> >> _ccpr2_aux -> 2 `i `uc ]
-[; ;hardware.c: 210: }
-"210
+[; ;hardware.c: 217: }
+"217
 [e :UE 380 ]
 }
-"215
+"222
 [v _pwm1_setPeriod `(v ~T0 @X0 1 ef1`uc ]
-"216
+"223
 {
-[; ;hardware.c: 215: void pwm1_setPeriod(uint8_t period)
-[; ;hardware.c: 216: {
+[; ;hardware.c: 222: void pwm1_setPeriod(uint8_t period)
+[; ;hardware.c: 223: {
 [e :U _pwm1_setPeriod ]
-"215
+"222
 [v _period `uc ~T0 @X0 1 r1 ]
-"216
+"223
 [f ]
-[; ;hardware.c: 217: T2CON = 0x04;
-"217
+[; ;hardware.c: 224: T2CON = 0x04;
+"224
 [e = _T2CON -> -> 4 `i `uc ]
-[; ;hardware.c: 218: PR2 = period;
-"218
+[; ;hardware.c: 225: PR2 = period;
+"225
 [e = _PR2 _period ]
-[; ;hardware.c: 220: }
-"220
+[; ;hardware.c: 227: }
+"227
 [e :UE 381 ]
 }

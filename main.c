@@ -18,13 +18,11 @@
 #include <stdio.h>
 #include "main.h"
 
-uint8_t interrupt_timer0 = 0; // Timebase auxiliary control.
+uint8_t interrupt_timer0 = 0;  // Timebase auxiliary control.
 uint8_t rpm_ckp = 0;           // Control of the pulse that the phonic wheel would generate.
 uint8_t rpm_cmp = 0;           // CMP sensor position control.
 uint8_t turn_ctrl;             // Engine cycle control.
-uint8_t wave = 0;
-uint8_t count = 0;
-uint8_t i = 0;
+uint8_t count = 0;             // Control a sampling rate index for sinusoid simulation based on PWM2 duty cycle.
 
 // senoid period
 

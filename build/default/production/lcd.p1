@@ -3651,28 +3651,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 111: uint8_t digit_counter(uint16_t number);
 [; ;lcd.h: 113: void ms_time(uint16_t ms);
 [; ;lcd.h: 114: void us_time(uint16_t us);
-[; ;hardware.h: 22: void pic_ini(void);
-[; ;hardware.h: 23: void timer0_ini(void);
-[; ;hardware.h: 24: void timer1_ini(void);
-[; ;hardware.h: 25: void timer1_write(uint16_t timer_value);
-[; ;hardware.h: 26: void timer2_ini(void);
-[; ;hardware.h: 27: void timer0_write(uint16_t timer_value);
-[; ;hardware.h: 28: void timer2_write( uint8_t timer_value);
-[; ;hardware.h: 29: void adc_ini(void);
-[; ;hardware.h: 30: uint16_t adc_read(uint8_t ch);
-[; ;hardware.h: 31: void pwm1_ini(void);
-[; ;hardware.h: 32: void pwm2_ini(void);
-[; ;hardware.h: 33: void pwm1_setDutyPot(uint16_t ccpr1_aux);
-[; ;hardware.h: 34: void pwm2_setDutyPot(uint16_t ccpr2_aux);
-[; ;hardware.h: 35: void pwm1_setPeriod(uint8_t period);
-[; ;hardware.h: 36: void pwm2_setPeriod(uint8_t period);
-[; ;main.h: 17: void cmp_sensor(void);
-[; ;main.h: 29: typedef unsigned char uint8_t;
-[; ;main.h: 30: typedef signed char int8_t;
-[; ;main.h: 31: typedef unsigned short uint16_t;
-[; ;main.h: 32: typedef signed short int16_t;
-[; ;main.h: 33: typedef unsigned long uint32_t;
-[; ;main.h: 34: typedef signed long int32_t;
+[; ;hardware.h: 31: void pic_ini(void);
+[; ;hardware.h: 32: void timer0_ini(void);
+[; ;hardware.h: 33: void timer1_ini(void);
+[; ;hardware.h: 34: void timer1_write(uint16_t timer_value);
+[; ;hardware.h: 35: void timer2_ini(void);
+[; ;hardware.h: 36: void timer0_write(uint16_t timer_value);
+[; ;hardware.h: 37: void timer2_write( uint8_t timer_value);
+[; ;hardware.h: 38: void adc_ini(void);
+[; ;hardware.h: 39: uint16_t adc_read(uint8_t ch);
+[; ;hardware.h: 40: void pwm1_ini(void);
+[; ;hardware.h: 41: void pwm2_ini(void);
+[; ;hardware.h: 42: void pwm1_setDutyPot(uint16_t ccpr1_aux);
+[; ;hardware.h: 43: void pwm2_setDutyPot(uint16_t ccpr2_aux);
+[; ;hardware.h: 44: void pwm1_setPeriod(uint8_t period);
+[; ;hardware.h: 45: void pwm2_setPeriod(uint8_t period);
+[; ;main.h: 22: void cmp_sensor(void);
+[; ;main.h: 34: typedef unsigned char uint8_t;
+[; ;main.h: 35: typedef signed char int8_t;
+[; ;main.h: 36: typedef unsigned short uint16_t;
+[; ;main.h: 37: typedef signed short int16_t;
+[; ;main.h: 38: typedef unsigned long uint32_t;
+[; ;main.h: 39: typedef signed long int32_t;
 "41 lcd.c
 [v _lcd_com `(v ~T0 @X0 1 ef1`uc ]
 "42
@@ -4007,44 +4007,44 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.c: 217: n++;
 "217
 [e ++ _n -> -> 1 `i `uc ]
-"219
+"218
 }
 [e :U 381 ]
 "214
 [e $ >= _number -> -> 10 `i `ui 382  ]
 [e :U 383 ]
-[; ;lcd.c: 219: }
-[; ;lcd.c: 220: return n;
-"220
+[; ;lcd.c: 218: }
+[; ;lcd.c: 219: return n;
+"219
 [e ) _n ]
 [e $UE 380  ]
-[; ;lcd.c: 221: }
-"221
+[; ;lcd.c: 220: }
+"220
 [e :UE 380 ]
 }
-"231
+"230
 [v _ms_time `(v ~T0 @X0 1 ef1`ui ]
-"232
-{
-[; ;lcd.c: 231: void ms_time(uint16_t ms)
-[; ;lcd.c: 232: {
-[e :U _ms_time ]
 "231
+{
+[; ;lcd.c: 230: void ms_time(uint16_t ms)
+[; ;lcd.c: 231: {
+[e :U _ms_time ]
+"230
 [v _ms `ui ~T0 @X0 1 r1 ]
-"232
+"231
 [f ]
-[; ;lcd.c: 233: for(uint16_t tms=0; tms < ms/10; tms++)
-"233
+[; ;lcd.c: 232: for(uint16_t tms=0; tms < ms/10; tms++)
+"232
 {
 [v _tms `ui ~T0 @X0 1 a ]
 [e = _tms -> -> 0 `i `ui ]
 [e $U 388  ]
-"234
+"233
 [e :U 385 ]
-[; ;lcd.c: 234: {
+[; ;lcd.c: 233: {
 {
-[; ;lcd.c: 235: for(uint16_t sms=0; sms < ((8000000/4)/1000); sms++);
-"235
+[; ;lcd.c: 234: for(uint16_t sms=0; sms < ((8000000/4)/1000); sms++);
+"234
 {
 [v _sms `ui ~T0 @X0 1 a ]
 [e = _sms -> -> 0 `i `ui ]
@@ -4055,43 +4055,43 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ < -> _sms `l / / -> 8000000 `l -> -> 4 `i `l -> -> 1000 `i `l 389  ]
 [e :U 390 ]
 }
-"237
+"236
 }
-"233
+"232
 [e ++ _tms -> -> 1 `i `ui ]
 [e :U 388 ]
 [e $ < _tms / _ms -> -> 10 `i `ui 385  ]
 [e :U 386 ]
-"237
+"236
 }
+[; ;lcd.c: 236: }
 [; ;lcd.c: 237: }
-[; ;lcd.c: 238: }
-"238
+"237
 [e :UE 384 ]
 }
-"248
+"247
 [v _us_time `(v ~T0 @X0 1 ef1`ui ]
-"249
-{
-[; ;lcd.c: 248: void us_time(uint16_t us)
-[; ;lcd.c: 249: {
-[e :U _us_time ]
 "248
+{
+[; ;lcd.c: 247: void us_time(uint16_t us)
+[; ;lcd.c: 248: {
+[e :U _us_time ]
+"247
 [v _us `ui ~T0 @X0 1 r1 ]
-"249
+"248
 [f ]
-[; ;lcd.c: 250: for(uint16_t tus=0; tus < us/10; tus++)
-"250
+[; ;lcd.c: 249: for(uint16_t tus=0; tus < us/10; tus++)
+"249
 {
 [v _tus `ui ~T0 @X0 1 a ]
 [e = _tus -> -> 0 `i `ui ]
 [e $U 396  ]
-"251
+"250
 [e :U 393 ]
-[; ;lcd.c: 251: {
+[; ;lcd.c: 250: {
 {
-[; ;lcd.c: 252: for(uint16_t sus=0; sus < (8000000>>2)/1000000; sus++);
-"252
+[; ;lcd.c: 251: for(uint16_t sus=0; sus < (8000000>>2)/1000000; sus++);
+"251
 {
 [v _sus `ui ~T0 @X0 1 a ]
 [e = _sus -> -> 0 `i `ui ]
@@ -4102,17 +4102,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ < -> _sus `l / >> -> 8000000 `l -> 2 `i -> 1000000 `l 397  ]
 [e :U 398 ]
 }
-"253
+"252
 }
-"250
+"249
 [e ++ _tus -> -> 1 `i `ui ]
 [e :U 396 ]
 [e $ < _tus / _us -> -> 10 `i `ui 393  ]
 [e :U 394 ]
-"253
+"252
 }
+[; ;lcd.c: 252: }
 [; ;lcd.c: 253: }
-[; ;lcd.c: 254: }
-"254
+"253
 [e :UE 392 ]
 }
