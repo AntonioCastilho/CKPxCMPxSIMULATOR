@@ -5787,7 +5787,7 @@ void lcd_com(uint8_t cmd);
 void lcd_ini(void);
 void lcd_prtChar(uint8_t dat);
 void lcd_prtStr(const uint8_t row, const uint8_t col, const uint8_t *str);
-void lcd_prtInt(const uint8_t row, const uint8_t col, const int32_t str);
+void lcd_prtInt(const uint8_t row, const uint8_t col, const uint32_t str);
 
 uint8_t digit_counter(uint16_t number);
 
@@ -5797,32 +5797,32 @@ void us_time(uint16_t us);
 # 31 "hardware.h"
 void pic_ini(void);
 void timer0_ini(void);
+void timer0_write(uint16_t timer0_value);
 void timer1_ini(void);
-void timer1_write(uint16_t timer_value);
+void timer1_write(uint16_t timer1_value);
 void timer2_ini(void);
-void timer0_write(uint16_t timer_value);
-void timer2_write( uint8_t timer_value);
 void adc_ini(void);
-uint16_t adc_read(uint8_t ch);
 void pwm1_ini(void);
 void pwm2_ini(void);
 void pwm1_setDutyPot(uint16_t ccpr1_aux);
 void pwm2_setDutyPot(uint16_t ccpr2_aux);
 void pwm1_setPeriod(uint8_t period);
 void pwm2_setPeriod(uint8_t period);
+uint16_t adc_read(uint8_t ch);
 
-# 20 "hardware.c"
+# 23 "hardware.c"
 void pic_ini(void)
 
 {
 
-# 25
+# 28
 INTCONbits.GIE = 1;
 INTCONbits.PEIE_GIEL = 1;
 
-# 30
+# 33
 lcd_ini();
 lcd_com(0x0C);
+lcd_prtInt(0, 0, 12345);
 adc_ini();
 timer0_ini();
 timer1_ini();
@@ -5830,7 +5830,7 @@ timer2_ini();
 pwm1_ini();
 pwm2_ini();
 
-# 42
+# 45
 TRISB = 0x00;
 LATB = 0xFF;
 
@@ -5844,16 +5844,16 @@ T0CON = 0x90;
 T0CONbits.TMR0ON = 1;
 INTCONbits.TMR0IE = 1;
 
-timer0_write(0xFE0C);
+
 
 }
 
 
-void timer0_write( uint16_t timer_value)
+void timer0_write( uint16_t timer0_value)
 
 {
-TMR0L = (timer_value & 0x00FF);
-TMR0H = (timer_value >> 8) & 0x00FF;
+TMR0L = (timer0_value & 0x00FF);
+TMR0H = (timer0_value >> 8) & 0x00FF;
 
 }
 
@@ -5868,19 +5868,18 @@ PIE1bits.TMR1IE = 1;
 
 TMR1IF = 0;
 
-timer1_write(0xCF2C);
+
 
 }
 
 
-void timer1_write(uint16_t timer_value)
+void timer1_write(uint16_t timer1_value)
 
 {
-TMR1L = (timer_value & 0x00FF);
-TMR1H = (timer_value >> 8) & 0x00FF;
+TMR1L = (timer1_value & 0x00FF);
+TMR1H = (timer1_value >> 8) & 0x00FF;
+
 }
-
-
 
 void timer2_ini(void)
 
@@ -5899,7 +5898,9 @@ void adc_ini(void)
 {
 
 TRISA = 0x0F;
-ADCON1 = 0x0B;
+TRISEbits.RE0 = 1;
+ADCON0 = 0x00;
+ADCON1 = 0x09;
 ADCON2 = 0xBE;
 ADCON0bits.ADON = 1;
 ADRESH=0;
@@ -5914,7 +5915,7 @@ uint16_t adc_read(uint8_t ch)
 uint16_t value;
 ADCON0bits.CHS = ch;
 ADCON0bits.GO = 1;
-while(ADCON0bits.GO_DONE == 1);
+while(ADCON0bits.GO_DONE);
 value = (uint16_t)((ADRESH << 8) + ADRESL);
 return value;
 
@@ -5940,7 +5941,7 @@ pr_var =
 (uint8_t)(round((1/(float)900)/((4/(float)8000000) *
 (float)16 * (float)1)));
 
-PR2 = pr_var;
+PR2 = (uint8_t)(pr_var);
 
 
 uint16_t cycle =
@@ -5951,7 +5952,7 @@ CCP1CONbits.DC1B0 = cycle;
 CCP1CONbits.DC1B1 = cycle >> 1;
 CCPR1L = cycle >> 2;
 
-# 165
+# 169
 TRISBbits.TRISB0 = 0;
 LATBbits.LATB0 = 1;
 
@@ -5967,13 +5968,13 @@ void pwm2_ini(void)
 
 TRISCbits.RC1 = 0;
 
-# 185
+# 189
 CCP2CON = 0X0F;
 
 
 uint8_t pr_var = PR2;
 
-# 196
+# 200
 uint16_t cycle2 =
 (uint16_t)(round(((((float)500)/1000.0)*4.0*(
 (float)(pr_var)+1.0))));

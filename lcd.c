@@ -24,6 +24,7 @@
  * Includes
  ******************************************************************************/
 #include <xc.h>
+#include <string.h>
 #include <stdlib.h>
 #include <math.h>
 #include "main.h"
@@ -66,7 +67,8 @@ void lcd_com(uint8_t cmd)
     us_time(10);
 
     if(cmd == 0x01) us_time(100);
-    if(cmd == 0x00) us_time(100);       
+    if(cmd == 0x00) us_time(100);
+    
 } /* end of function void lcd_com(uint8_t cmd)
 *******************************************************************************/
 
@@ -102,7 +104,8 @@ void lcd_ini(void)
     
     lcd_com(0x0F); //Display on/off control. Display on, cursor on, cursor blink.
     
-    lcd_com(0x01); // Clear display.    
+    lcd_com(0x01); // Clear display.
+    
 } /* end of function void lcd_ini(void)
 *******************************************************************************/
 
@@ -137,6 +140,7 @@ void lcd_prtChar(uint8_t dat)
     us_time(40);
     LCD_E = 0;
     us_time(40);
+    
 } /* end of function void lcd_prtChar(uint8_t dat)
 *******************************************************************************/
 
@@ -192,12 +196,14 @@ void lcd_prtStr(const uint8_t row, const uint8_t col, const uint8_t *str)
  * **********|*******************|*********************************************
  * 04/02/2022| Antonio Castilho  | Function has been created
  ******************************************************************************/
-void lcd_prtInt(const uint8_t row, const uint8_t col, const int32_t value)
+void lcd_prtInt(const uint8_t row, const uint8_t col, const uint32_t value)
 {
+    
     uint8_t str[((sizeof(value))+1)];
     itoa(str, value, 10);
     
     lcd_prtStr(row,col,str);
+    
  }// end of function void lcd_prtInt(const uint8_t row, const uint8_t col, const int32_t value)
 /******************************************************************************/
 
@@ -217,6 +223,7 @@ uint8_t digit_counter(uint16_t number)
         n++;
     }
     return n;
+    
 } //end of function uint8_t digit_counter(uint16_t number);
 /******************************************************************************/
 
@@ -234,6 +241,7 @@ void ms_time(uint16_t ms)
         for(uint16_t sms=0; sms < ((_XTAL_FREQ/4)/1000); sms++);
 
     }
+    
 } // end ms_time(uint16 ms)
 /******************************************************************************/
 
@@ -250,5 +258,6 @@ void us_time(uint16_t us)
     {
         for(uint16_t sus=0; sus < (_XTAL_FREQ>>2)/1000000; sus++);
     }
+    
 } // end us_time(uint16_t us)
 /******************************************************************************/

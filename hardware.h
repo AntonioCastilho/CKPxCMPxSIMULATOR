@@ -30,11 +30,10 @@
  ******************************************************************************/
 void     pic_ini(void);
 void     timer0_ini(void);
+void     timer0_write(uint16_t timer0_value);
 void     timer1_ini(void);
-void     timer1_write(uint16_t timer_value);
+void     timer1_write(uint16_t timer1_value);
 void     timer2_ini(void);
-void     timer0_write(uint16_t timer_value);
-void     timer2_write( uint8_t timer_value);
 void     adc_ini(void);
 void     pwm1_ini(void);
 void     pwm2_ini(void);

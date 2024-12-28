@@ -15,7 +15,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S354 . . . . ]
 "8614
 [v _INTCONbits `VS354 ~T0 @X0 0 e@4082 ]
-"36 hardware.h
+"33 hardware.h
 [v _timer0_write `(v ~T0 @X0 0 ef1`ui ]
 "3079 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
 [s S125 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -28,9 +28,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S124 . . . ]
 "3100
 [v _LATBbits `VS124 ~T0 @X0 0 e@3978 ]
+"4474
+[s S173 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S173 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF SPPIF ]
+"4484
+[s S174 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S174 . . TX1IF RC1IF . PSPIF ]
+"4473
+[u S172 `S173 1 `S174 1 ]
+[n S172 . . . ]
+"4492
+[v _PIR1bits `VS172 ~T0 @X0 0 e@3998 ]
 "10834
 [v _TMR1IF `Vb ~T0 @X0 0 e@31984 ]
-"34 hardware.h
+"35 hardware.h
 [v _timer1_write `(v ~T0 @X0 0 ef1`ui ]
 "2459 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
 [s S102 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -46,20 +57,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S101 . . . . ]
 "2483
 [v _PORTBbits `VS101 ~T0 @X0 0 e@3969 ]
-"43 hardware.h
+"41 hardware.h
 [v _pwm2_setDutyPot `(v ~T0 @X0 0 ef1`ui ]
-"4474 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
-[s S173 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S173 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF SPPIF ]
-"4484
-[s S174 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S174 . . TX1IF RC1IF . PSPIF ]
-"4473
-[u S172 `S173 1 `S174 1 ]
-[n S172 . . . ]
-"4492
-[v _PIR1bits `VS172 ~T0 @X0 0 e@3998 ]
-"3191
+"3191 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
 [s S128 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S128 . LATC0 LATC1 LATC2 . LATC6 LATC7 ]
 "3199
@@ -3731,25 +3731,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.h: 106: void lcd_ini(void);
 [; ;lcd.h: 107: void lcd_prtChar(uint8_t dat);
 [; ;lcd.h: 108: void lcd_prtStr(const uint8_t row, const uint8_t col, const uint8_t *str);
-[; ;lcd.h: 109: void lcd_prtInt(const uint8_t row, const uint8_t col, const int32_t str);
+[; ;lcd.h: 109: void lcd_prtInt(const uint8_t row, const uint8_t col, const uint32_t str);
 [; ;lcd.h: 111: uint8_t digit_counter(uint16_t number);
 [; ;lcd.h: 113: void ms_time(uint16_t ms);
 [; ;lcd.h: 114: void us_time(uint16_t us);
 [; ;hardware.h: 31: void pic_ini(void);
 [; ;hardware.h: 32: void timer0_ini(void);
-[; ;hardware.h: 33: void timer1_ini(void);
-[; ;hardware.h: 34: void timer1_write(uint16_t timer_value);
-[; ;hardware.h: 35: void timer2_ini(void);
-[; ;hardware.h: 36: void timer0_write(uint16_t timer_value);
-[; ;hardware.h: 37: void timer2_write( uint8_t timer_value);
-[; ;hardware.h: 38: void adc_ini(void);
-[; ;hardware.h: 39: uint16_t adc_read(uint8_t ch);
-[; ;hardware.h: 40: void pwm1_ini(void);
-[; ;hardware.h: 41: void pwm2_ini(void);
-[; ;hardware.h: 42: void pwm1_setDutyPot(uint16_t ccpr1_aux);
-[; ;hardware.h: 43: void pwm2_setDutyPot(uint16_t ccpr2_aux);
-[; ;hardware.h: 44: void pwm1_setPeriod(uint8_t period);
-[; ;hardware.h: 45: void pwm2_setPeriod(uint8_t period);
+[; ;hardware.h: 33: void timer0_write(uint16_t timer0_value);
+[; ;hardware.h: 34: void timer1_ini(void);
+[; ;hardware.h: 35: void timer1_write(uint16_t timer1_value);
+[; ;hardware.h: 36: void timer2_ini(void);
+[; ;hardware.h: 37: void adc_ini(void);
+[; ;hardware.h: 38: void pwm1_ini(void);
+[; ;hardware.h: 39: void pwm2_ini(void);
+[; ;hardware.h: 40: void pwm1_setDutyPot(uint16_t ccpr1_aux);
+[; ;hardware.h: 41: void pwm2_setDutyPot(uint16_t ccpr2_aux);
+[; ;hardware.h: 42: void pwm1_setPeriod(uint8_t period);
+[; ;hardware.h: 43: void pwm2_setPeriod(uint8_t period);
+[; ;hardware.h: 44: uint16_t adc_read(uint8_t ch);
 [; ;main.h: 22: void cmp_sensor(void);
 [; ;main.h: 34: typedef unsigned char uint8_t;
 [; ;main.h: 35: typedef signed char int8_t;
@@ -3762,28 +3761,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [i _interrupt_timer0
 -> -> 0 `i `uc
 ]
-[; ;main.c: 33: uint8_t interrupt_timer0 = 0;
 "34
 [v _rpm_ckp `uc ~T0 @X0 1 e ]
 [i _rpm_ckp
 -> -> 0 `i `uc
 ]
-[; ;main.c: 34: uint8_t rpm_ckp = 0;
 "35
 [v _rpm_cmp `uc ~T0 @X0 1 e ]
 [i _rpm_cmp
 -> -> 0 `i `uc
 ]
-[; ;main.c: 35: uint8_t rpm_cmp = 0;
 "36
 [v _turn_ctrl `uc ~T0 @X0 1 e ]
-[; ;main.c: 36: uint8_t turn_ctrl;
+[i _turn_ctrl
+-> -> 0 `i `uc
+]
 "37
 [v _count `uc ~T0 @X0 1 e ]
 [i _count
 -> -> 0 `i `uc
 ]
-[; ;main.c: 37: uint8_t count = 0;
+[; ;main.c: 33: uint8_t interrupt_timer0 = 0,
+[; ;main.c: 34: rpm_ckp = 0,
+[; ;main.c: 35: rpm_cmp = 0,
+[; ;main.c: 36: turn_ctrl = 0,
+[; ;main.c: 37: count = 0;
 "40
 [v _sinewave `ui ~T0 @X0 -> 0 `x e ]
 [i _sinewave
@@ -3871,9 +3873,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 368 ]
 [; ;main.c: 62: }
-[; ;main.c: 68: if(TMR1IF)
+[; ;main.c: 68: if(PIR1bits.TMR1IF)
 "68
-[e $ ! _TMR1IF 369  ]
+[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 369  ]
 [; ;main.c: 69: {
 "69
 {
@@ -3886,7 +3888,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 76: LATBbits.LATB5 = ~PORTBbits.RB5;
 "76
 [e = . . _LATBbits 0 5 -> ~ -> . . _PORTBbits 0 5 `i `uc ]
-[; ;main.c: 77: pwm2_setDutyPot((float)(sinewave[count])*1.15);
+[; ;main.c: 77: pwm2_setDutyPot((uint16_t)(((float)sinewave[count])*1.15));
 "77
 [e ( _pwm2_setDutyPot (1 -> * -> -> *U + &U _sinewave * -> _count `ux -> -> # *U &U _sinewave `ui `ux `f `d .1.15 `ui ]
 [; ;main.c: 79: count++;

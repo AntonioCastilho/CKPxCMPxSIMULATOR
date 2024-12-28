@@ -5836,7 +5836,7 @@ void lcd_com(uint8_t cmd);
 void lcd_ini(void);
 void lcd_prtChar(uint8_t dat);
 void lcd_prtStr(const uint8_t row, const uint8_t col, const uint8_t *str);
-void lcd_prtInt(const uint8_t row, const uint8_t col, const int32_t str);
+void lcd_prtInt(const uint8_t row, const uint8_t col, const uint32_t str);
 
 uint8_t digit_counter(uint16_t number);
 
@@ -5846,19 +5846,18 @@ void us_time(uint16_t us);
 # 31 "hardware.h"
 void pic_ini(void);
 void timer0_ini(void);
+void timer0_write(uint16_t timer0_value);
 void timer1_ini(void);
-void timer1_write(uint16_t timer_value);
+void timer1_write(uint16_t timer1_value);
 void timer2_ini(void);
-void timer0_write(uint16_t timer_value);
-void timer2_write( uint8_t timer_value);
 void adc_ini(void);
-uint16_t adc_read(uint8_t ch);
 void pwm1_ini(void);
 void pwm2_ini(void);
 void pwm1_setDutyPot(uint16_t ccpr1_aux);
 void pwm2_setDutyPot(uint16_t ccpr2_aux);
 void pwm1_setPeriod(uint8_t period);
 void pwm2_setPeriod(uint8_t period);
+uint16_t adc_read(uint8_t ch);
 
 # 22 "main.h"
 void cmp_sensor(void);
@@ -5872,11 +5871,11 @@ typedef unsigned long uint32_t;
 typedef signed long int32_t;
 
 # 33 "main.c"
-uint8_t interrupt_timer0 = 0;
-uint8_t rpm_ckp = 0;
-uint8_t rpm_cmp = 0;
-uint8_t turn_ctrl;
-uint8_t count = 0;
+uint8_t interrupt_timer0 = 0,
+rpm_ckp = 0,
+rpm_cmp = 0,
+turn_ctrl = 0,
+count = 0;
 
 
 uint16_t sinewave[] =
@@ -5902,7 +5901,7 @@ LATBbits.LATB7 = ~LATBbits.LATB7;
 }
 
 # 68
-if(TMR1IF)
+if(PIR1bits.TMR1IF)
 {
 
 
@@ -5911,7 +5910,7 @@ TMR1IF = 0;
 timer1_write(0xCF2C);
 
 LATBbits.LATB5 = ~PORTBbits.RB5;
-pwm2_setDutyPot((float)(sinewave[count])*1.15);
+pwm2_setDutyPot((uint16_t)(((float)sinewave[count])*1.15));
 
 count++;
 if(count > 41) count = 0;

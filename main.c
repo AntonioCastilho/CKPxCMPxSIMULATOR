@@ -30,11 +30,11 @@
 /*******************************************************************************
  * Global variables 
  ******************************************************************************/
-uint8_t interrupt_timer0 = 0;  // Timebase auxiliary control.
-uint8_t rpm_ckp = 0;           // Control of the pulse that the phonic wheel would generate.
-uint8_t rpm_cmp = 0;           // CMP sensor position control.
-uint8_t turn_ctrl;             // Engine cycle control.
-uint8_t count = 0;             // Control a sampling rate index for sinusoid simulation based on PWM2 duty cycle.
+uint8_t interrupt_timer0 = 0, // Timebase auxiliary control.
+        rpm_ckp = 0,          // Control of the pulse that the phonic wheel would generate.
+        rpm_cmp = 0,          // CMP sensor position control.
+        turn_ctrl = 0,        // Engine cycle control.
+        count = 0;            // Control a sampling rate index for sinusoid simulation based on PWM2 duty cycle.
 
 // senoid period
 uint16_t sinewave[] = // 41 samples
@@ -65,7 +65,7 @@ void __interrupt() ISR()    // Interrupt function
      * TIMER 1 Interrupt | 50ms
      * Simulation of a lambda probe signal 
      **********************************************************/
-    if(TMR1IF)
+    if(PIR1bits.TMR1IF)
     {  
         // Interrupção a cada 50 ms
         // em 2 segundos -> 40 atualizações
@@ -74,7 +74,7 @@ void __interrupt() ISR()    // Interrupt function
         timer1_write(0xCF2C);
         
         LATBbits.LATB5 = ~PORTBbits.RB5;
-        pwm2_setDutyPot((float)(sinewave[count])*1.15);
+        pwm2_setDutyPot((uint16_t)(((float)sinewave[count])*1.15));
         
         count++;
         if(count > 41) count = 0;

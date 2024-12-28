@@ -5670,6 +5670,38 @@ unsigned char __t3rd16on(void);
 # 4 "C:\Program Files\Microchip\xc8\v2.50\pic\include\c90\__size_t.h"
 typedef unsigned size_t;
 
+# 14 "C:\Program Files\Microchip\xc8\v2.50\pic\include\c90\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 36
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *) __attribute__((__deprecated__));
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t) __attribute__((__deprecated__));
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *) __attribute__((__deprecated__));
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int) __attribute__((__deprecated__));
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int) __attribute__((__deprecated__));
+
 # 7 "C:\Program Files\Microchip\xc8\v2.50\pic\include\c90\stdlib.h"
 typedef unsigned short wchar_t;
 
@@ -5776,7 +5808,7 @@ void lcd_com(uint8_t cmd);
 void lcd_ini(void);
 void lcd_prtChar(uint8_t dat);
 void lcd_prtStr(const uint8_t row, const uint8_t col, const uint8_t *str);
-void lcd_prtInt(const uint8_t row, const uint8_t col, const int32_t str);
+void lcd_prtInt(const uint8_t row, const uint8_t col, const uint32_t str);
 
 uint8_t digit_counter(uint16_t number);
 
@@ -5786,19 +5818,18 @@ void us_time(uint16_t us);
 # 31 "hardware.h"
 void pic_ini(void);
 void timer0_ini(void);
+void timer0_write(uint16_t timer0_value);
 void timer1_ini(void);
-void timer1_write(uint16_t timer_value);
+void timer1_write(uint16_t timer1_value);
 void timer2_ini(void);
-void timer0_write(uint16_t timer_value);
-void timer2_write( uint8_t timer_value);
 void adc_ini(void);
-uint16_t adc_read(uint8_t ch);
 void pwm1_ini(void);
 void pwm2_ini(void);
 void pwm1_setDutyPot(uint16_t ccpr1_aux);
 void pwm2_setDutyPot(uint16_t ccpr2_aux);
 void pwm1_setPeriod(uint8_t period);
 void pwm2_setPeriod(uint8_t period);
+uint16_t adc_read(uint8_t ch);
 
 # 22 "main.h"
 void cmp_sensor(void);
@@ -5811,7 +5842,7 @@ typedef signed short int16_t;
 typedef unsigned long uint32_t;
 typedef signed long int32_t;
 
-# 41 "lcd.c"
+# 42 "lcd.c"
 void lcd_com(uint8_t cmd)
 {
 PORTD = 0xF0;
@@ -5841,9 +5872,10 @@ us_time(10);
 
 if(cmd == 0x01) us_time(100);
 if(cmd == 0x00) us_time(100);
+
 }
 
-# 82
+# 84
 void lcd_ini(void)
 {
 ms_time(10);
@@ -5868,9 +5900,10 @@ lcd_com(0x06);
 lcd_com(0x0F);
 
 lcd_com(0x01);
+
 }
 
-# 117
+# 120
 void lcd_prtChar(uint8_t dat)
 {
 PORTD = 0xF0;
@@ -5894,9 +5927,10 @@ PORTDbits.RD0 = 1;
 us_time(40);
 PORTDbits.RD0 = 0;
 us_time(40);
+
 }
 
-# 153
+# 157
 void lcd_prtStr(const uint8_t row, const uint8_t col, const uint8_t *str)
 {
 
@@ -5925,16 +5959,18 @@ str++;
 
 }
 
-# 195
-void lcd_prtInt(const uint8_t row, const uint8_t col, const int32_t value)
+# 199
+void lcd_prtInt(const uint8_t row, const uint8_t col, const uint32_t value)
 {
+
 uint8_t str[((sizeof(value))+1)];
 itoa(str, value, 10);
 
 lcd_prtStr(row,col,str);
+
 }
 
-# 211
+# 217
 uint8_t digit_counter(uint16_t number)
 {
 uint8_t n = 0;
@@ -5944,9 +5980,10 @@ number = number / 10;
 n++;
 }
 return n;
+
 }
 
-# 230
+# 237
 void ms_time(uint16_t ms)
 {
 for(uint16_t tms=0; tms < ms/10; tms++)
@@ -5954,14 +5991,16 @@ for(uint16_t tms=0; tms < ms/10; tms++)
 for(uint16_t sms=0; sms < ((8000000/4)/1000); sms++);
 
 }
+
 }
 
-# 247
+# 255
 void us_time(uint16_t us)
 {
 for(uint16_t tus=0; tus < us/10; tus++)
 {
 for(uint16_t sus=0; sus < (8000000>>2)/1000000; sus++);
 }
+
 }
 

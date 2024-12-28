@@ -30,15 +30,15 @@ void pic_ini(void)
     
     /* Peripherals 
     **************************************************************************/
-    lcd_ini();  
-    lcd_cursorOff(); // Starts a 2 X16 LCD and turns off its cursor.
+    lcd_ini();       // Starts a 2 X16 LC
+    lcd_cursorOff(); // Turns cursor off.
+    lcd_prtInt(0, 0, 12345);
     adc_ini();       // Starts the Analog Digital converter.   
     timer0_ini();    // Starts Timer 0.
     timer1_ini();    // Starts Timer 1.
     timer2_ini();    // Starts Timer 2.
     pwm1_ini();      // Starts PWM 1.
     pwm2_ini();      // Starts PWM 2.
-    
     
     /* Set I/O
     ***************************************************************************/
@@ -51,20 +51,20 @@ void pic_ini(void)
 void timer0_ini(void)
 /******************************************************************************/
 {
-    T0CON = 0x90; // Timer 0 control register|Enable|16 bits|Prescaler 256| pg. 127.
+    T0CON = 0x90; // Timer 0 control register|TIMER0 Enable|16 bits|Prescaler 256| pg. 127.
     T0CONbits.TMR0ON = 1;
     INTCONbits.TMR0IE = 1; // Timer 0 interrupt enable | pg. 101.
     
-    timer0_write(0xFE0C);
+    //timer0_write(0xFE0C);
     
 } // end timer0_ini()
 
 /******************************************************************************/
-void  timer0_write( uint16_t timer_value)
+void  timer0_write( uint16_t timer0_value)
 /******************************************************************************/
 {
-    TMR0L = (timer_value & 0x00FF);
-    TMR0H = (timer_value >> 8) & 0x00FF;
+    TMR0L = (timer0_value & 0x00FF);
+    TMR0H = (timer0_value >> 8) & 0x00FF;
     
 } // end of void timer0_write(uint16_t timer_value)
 
@@ -79,24 +79,23 @@ void timer1_ini(void)
     
     TMR1IF = 0;
    
-    timer1_write(0xCF2C); 
+    //timer1_write(0xCF2C); 
     
 } //end timer1_ini
 
 /******************************************************************************/
-void timer1_write(uint16_t timer_value)
+void timer1_write(uint16_t timer1_value)
 /******************************************************************************/
 {
-    TMR1L = (timer_value & 0x00FF);
-    TMR1H = (timer_value >> 8) & 0x00FF;
-} 
-// end of void timer1_write(uint16_t timer_value)
-
+    TMR1L = (timer1_value & 0x00FF);
+    TMR1H = (timer1_value >> 8) & 0x00FF;
+    
+} // end of void timer1_write(uint16_t timer_value)
  /*****************************************************************************/
 void timer2_ini(void)
 /******************************************************************************/
 {
-    T2CON = 0x07; // pg. 137.
+    T2CON = 0x07;        // pg. 137.
     PIE1bits.TMR2IE = 1; // Interrupt TIMER2 on
     PIR1bits.TMR2IF = 0;     // Timer2 Flag
     IPR1bits.TMR2IP = 1; // TMR2 to PR2 Match High priority
@@ -109,11 +108,13 @@ void adc_ini(void)
 /******************************************************************************/
 {
     // Configure Port A as input, according to the channels that will be needed.
-    TRISA = 0x0F;  // channel in AN0.
-    ADCON1 = 0x0B; // 4 channels Pg 262.
-    ADCON2 = 0xBE; // Right Justified, 4Tad and Fosc/32. Pg 263.
-    ADCON0bits.ADON = 1;
-    ADRESH=0;	   // Flush ADC output Register. Pg 261.
+    TRISA  = 0x0F;         // RA0-AN0, RA1-AN1, RA2-AN2, RA3-AN3 e RA4-AN4 Set as Imput
+    TRISEbits.RE0 = 1;     // AN5/RE0 as Imput;
+    ADCON0 = 0x00;         // AN0 Select | Status idle | ADON disabled
+    ADCON1 = 0x09;         // 6 channels Pg 262.
+    ADCON2 = 0xBE;         // Right Justified | 20 TAD | Fosc/64. Pg 263.
+    ADCON0bits.ADON = 1;   // AD enable.
+    ADRESH=0;	           // Flush ADC output Register. Pg 261.
     ADRESL=0;
     
 } // end of function void adc_ini(void)
@@ -123,9 +124,9 @@ uint16_t adc_read(uint8_t ch)
 /******************************************************************************/
 {
     uint16_t value;    
-    ADCON0bits.CHS = ch; // selects the channel to be read.
-    ADCON0bits.GO = 1;  // start conversion.
-    while(ADCON0bits.GO_DONE == 1); // wait for the conversion.
+    ADCON0bits.CHS = ch;       // selects the channel to be read.
+    ADCON0bits.GO = 1;         // start conversion.
+    while(ADCON0bits.GO_DONE); // wait for the conversion.
     value = (uint16_t)((ADRESH << 8) + ADRESL);
     return value;
     
@@ -136,14 +137,14 @@ void pwm1_ini(void)
 /******************************************************************************/
 {
     // I/O Set
-    TRISCbits.RC2  =  0; // RC2 pin PWM1 out.
+    TRISCbits.RC2  =  0;   // RC2 pin PWM1 out.
     
     OSCCON = 0x72;
     T2CONbits.TMR2ON = 1;  // Enables the operation of Timer0. 
-    TMR2 = 0; // Initialize the timer2 counter.
+    TMR2 = 0;              // Initialize the timer2 counter.
     
     // Initializes module CCP1. page 151.
-    CCP1CON = 0X0F; // PWM mode: P1A, P1C active-high; P1B, P1D active-high.
+    CCP1CON = 0X0F;        // PWM mode: P1A, P1C active-high; P1B, P1D active-high.
     
     // Configure the PS2 of PWM1, to control the frequency and period of PWM1.
     uint8_t pr_var = 0; 
@@ -151,7 +152,7 @@ void pwm1_ini(void)
         (uint8_t)(round((1/(float)PWM1_FREQUENCY)/((4/(float)_XTAL_FREQ) * 
         (float)TMR2PRESCALE * (float)TMR2POSTCALER)));
     
-    PR2 = pr_var;
+    PR2 = (uint8_t)(pr_var);
     
     // Configures Registers to control the PWM1's Duty Cycle.
     uint16_t cycle =

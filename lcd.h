@@ -106,13 +106,12 @@ void lcd_com(uint8_t cmd);     // Send a command to the display
 void lcd_ini(void);            // initialize the display
 void lcd_prtChar(uint8_t dat); // Write char in display.
 void lcd_prtStr(const uint8_t row, const uint8_t col, const uint8_t *str); //Write string.
-void lcd_prtInt(const uint8_t row, const uint8_t col, const int32_t str);  //Wtite integer
+void lcd_prtInt(const uint8_t row, const uint8_t col, const uint32_t str);  //Wtite integer
 
 uint8_t digit_counter(uint16_t number); // Counts the number of digits in an integer.
 
 void ms_time(uint16_t ms); // Wastes processing time.
 void us_time(uint16_t us); // Wastes processing time.
-
 /******************************************************************************/
 
 #endif	/* LCD_16X2_H */
